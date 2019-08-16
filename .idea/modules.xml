@@ -3,6 +3,7 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/.idea/bestwxpy.iml" filepath="$PROJECT_DIR$/.idea/bestwxpy.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../thesis/random_mvdt/.idea/random_mvdt.iml" filepath="$PROJECT_DIR$/../thesis/random_mvdt/.idea/random_mvdt.iml" />
     </modules>
   </component>
 </project>
