@@ -1,8 +1,20 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="c8cb2d60-5af8-4251-bd08-24f7c9a3a1ec" name="Default Changelist" comment="unused static files are removed">
+    <list default="true" id="c8cb2d60-5af8-4251-bd08-24f7c9a3a1ec" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../thesis/random_mvdt/.ipynb_checkpoints/data_prepare-checkpoint.py" beforeDir="false" afterPath="$PROJECT_DIR$/../thesis/random_mvdt/.ipynb_checkpoints/data_prepare-checkpoint.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../thesis/random_mvdt/.ipynb_checkpoints/data_split-checkpoint.py" beforeDir="false" afterPath="$PROJECT_DIR$/../thesis/random_mvdt/.ipynb_checkpoints/data_split-checkpoint.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../thesis/random_mvdt/.ipynb_checkpoints/logr_dt-checkpoint.ipynb" beforeDir="false" afterPath="$PROJECT_DIR$/../thesis/random_mvdt/.ipynb_checkpoints/logr_dt-checkpoint.ipynb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../thesis/random_mvdt/.ipynb_checkpoints/run-checkpoint.ipynb" beforeDir="false" afterPath="$PROJECT_DIR$/../thesis/random_mvdt/.ipynb_checkpoints/run-checkpoint.ipynb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../thesis/random_mvdt/data/iris.csv" beforeDir="false" afterPath="$PROJECT_DIR$/../thesis/random_mvdt/data/iris.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../thesis/random_mvdt/data_prepare.py" beforeDir="false" afterPath="$PROJECT_DIR$/../thesis/random_mvdt/data_prepare.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../thesis/random_mvdt/data_split.py" beforeDir="false" afterPath="$PROJECT_DIR$/../thesis/random_mvdt/data_split.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../thesis/random_mvdt/data_viz.py" beforeDir="false" afterPath="$PROJECT_DIR$/../thesis/random_mvdt/data_viz.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../thesis/random_mvdt/logr_dt.ipynb" beforeDir="false" afterPath="$PROJECT_DIR$/../thesis/random_mvdt/logr_dt.ipynb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../thesis/random_mvdt/run.ipynb" beforeDir="false" afterPath="$PROJECT_DIR$/../thesis/random_mvdt/run.ipynb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../thesis/random_mvdt/run.py" beforeDir="false" afterPath="$PROJECT_DIR$/../thesis/random_mvdt/run.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../thesis/random_mvdt/test.ipynb" beforeDir="false" afterPath="$PROJECT_DIR$/../thesis/random_mvdt/test.ipynb" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -49,13 +61,42 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/../thesis/random_mvdt/run.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="226">
-              <caret line="101" selection-start-line="101" selection-end-line="101" />
+            <state relative-caret-position="98">
+              <caret line="74" selection-start-line="74" selection-end-line="74" />
               <folding>
                 <element signature="e#0#19#0" expanded="true" />
               </folding>
             </state>
           </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/../thesis/random_mvdt/data_split.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="183">
+              <caret line="85" selection-start-line="85" selection-end-line="85" />
+              <folding>
+                <element signature="e#3682#3725#0" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/../thesis/random_mvdt/prediction.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="374">
+              <caret line="24" selection-start-line="24" selection-end-line="24" />
+              <folding>
+                <element signature="e#0#18#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/../thesis/random_mvdt/logr_dt.ipynb">
+          <provider selected="true" editor-type-id="jupyter-editor" />
         </entry>
       </file>
     </leaf>
@@ -156,8 +197,8 @@
         <option value="$PROJECT_DIR$/view/training/load_data.py" />
         <option value="$PROJECT_DIR$/../thesis/random_mvdt/prediction.py" />
         <option value="$PROJECT_DIR$/../thesis/random_mvdt/run.py" />
-        <option value="$PROJECT_DIR$/../thesis/random_mvdt/data_split.py" />
         <option value="$PROJECT_DIR$/../thesis/random_mvdt/data_prepare.py" />
+        <option value="$PROJECT_DIR$/../thesis/random_mvdt/data_split.py" />
       </list>
     </option>
   </component>
@@ -173,17 +214,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="ProjectPane">
-        <subPane>
-          <expand>
-            <path>
-              <item name="bestwx" type="b2602c69:ProjectViewProjectNode" />
-              <item name="random_mvdt" type="462c0819:PsiDirectoryNode" />
-            </path>
-          </expand>
-          <select />
-        </subPane>
-      </pane>
       <pane id="Scope">
         <subPane subId="Scope 'Project Files'; set:Project Files; class com.intellij.psi.search.scope.ProjectFilesScope">
           <expand>
@@ -201,6 +231,17 @@
               <item name="" type="442cc68d:ScopeViewTreeModel$RootNode" />
               <item name="view" type="9f88c78c:ScopeViewTreeModel$FileNode" />
               <item name="new_process" type="9f88c78c:ScopeViewTreeModel$FileNode" />
+            </path>
+          </expand>
+          <select />
+        </subPane>
+      </pane>
+      <pane id="ProjectPane">
+        <subPane>
+          <expand>
+            <path>
+              <item name="bestwx" type="b2602c69:ProjectViewProjectNode" />
+              <item name="random_mvdt" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -433,7 +474,8 @@
       <workItem from="1566063506394" duration="2315000" />
       <workItem from="1566222186016" duration="2591000" />
       <workItem from="1566249527231" duration="263000" />
-      <workItem from="1566312868065" duration="609000" />
+      <workItem from="1566312868065" duration="1526000" />
+      <workItem from="1566420635549" duration="2478000" />
     </task>
     <task id="LOCAL-00001" summary="prepare new data, more than two features tested, basic setup for ide">
       <created>1565984825676</created>
@@ -456,11 +498,32 @@
       <option name="project" value="LOCAL" />
       <updated>1565988987748</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="unused static files are removed">
+      <created>1566326712465</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1566326712465</updated>
+    </task>
+    <task id="LOCAL-00005" summary="unused static files are removed">
+      <created>1566326794656</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1566326794656</updated>
+    </task>
+    <task id="LOCAL-00006" summary="unused static files are removed">
+      <created>1566326821365</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1566326821365</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="425657000" />
+    <option name="totallyTimeSpent" value="429052000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -473,9 +536,8 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="784" extended-state="6" />
-    <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.22163388" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.2246596" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
@@ -486,10 +548,10 @@
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" weight="0.32961783" />
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Version Control" order="8" />
+      <window_info anchor="bottom" id="Version Control" order="8" weight="0.32872504" />
       <window_info anchor="bottom" id="Database Changes" order="9" />
       <window_info anchor="bottom" id="Event Log" order="10" side_tool="true" />
-      <window_info anchor="bottom" id="Terminal" order="11" visible="true" weight="0.32872504" />
+      <window_info anchor="bottom" id="Terminal" order="11" weight="0.32872504" />
       <window_info anchor="bottom" id="Python Console" order="12" weight="0.32872504" />
       <window_info anchor="right" id="Commander" order="0" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
@@ -544,6 +606,26 @@
           <line>113</line>
           <option name="timeStamp" value="22" />
         </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/../thesis/random_mvdt/run.py</url>
+          <line>66</line>
+          <option name="timeStamp" value="27" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/../thesis/random_mvdt/run.py</url>
+          <line>69</line>
+          <option name="timeStamp" value="28" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/../thesis/random_mvdt/run.py</url>
+          <line>71</line>
+          <option name="timeStamp" value="29" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/../thesis/random_mvdt/data_split.py</url>
+          <line>85</line>
+          <option name="timeStamp" value="30" />
+        </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
   </component>
@@ -564,7 +646,7 @@
     <SUITE FILE_PATH="coverage/bestwxpy$text.coverage" NAME="text Coverage Results" MODIFIED="1562700762167" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/test" />
     <SUITE FILE_PATH="coverage/bestwxpy$auigui.coverage" NAME="auigui Coverage Results" MODIFIED="1561998180039" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/test" />
     <SUITE FILE_PATH="coverage/bestwxpy$aa.coverage" NAME="aa Coverage Results" MODIFIED="1562080791348" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/test" />
-    <SUITE FILE_PATH="coverage/bestwx$run__1_.coverage" NAME="run (1) Coverage Results" MODIFIED="1566064062033" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/../thesis/random_mvdt" />
+    <SUITE FILE_PATH="coverage/bestwx$run__1_.coverage" NAME="run (1) Coverage Results" MODIFIED="1566421499833" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/../thesis/random_mvdt" />
     <SUITE FILE_PATH="coverage/bestwxpy$aui.coverage" NAME="aui Coverage Results" MODIFIED="1562080770528" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/test" />
     <SUITE FILE_PATH="coverage/bestwxpy$layout.coverage" NAME="layout Coverage Results" MODIFIED="1562758377027" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/test" />
     <SUITE FILE_PATH="coverage/bestwxpy$mainapp.coverage" NAME="mainapp Coverage Results" MODIFIED="1562758433378" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/test" />
@@ -573,9 +655,6 @@
     <SUITE FILE_PATH="coverage/bestwxpy$gridbgsz.coverage" NAME="gridbgsz Coverage Results" MODIFIED="1562758355730" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/test" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/test/old desgin/old design main frame dialog.png">
-      <provider selected="true" editor-type-id="images" />
-    </entry>
     <entry file="file://$PROJECT_DIR$/test/old desgin/old desgin main frame.png">
       <provider selected="true" editor-type-id="images" />
     </entry>
@@ -816,13 +895,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/../thesis/random_mvdt/data_split.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="289">
-          <caret line="19" column="22" selection-start-line="19" selection-start-column="22" selection-end-line="19" selection-end-column="22" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/../thesis/random_mvdt/data_prepare.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="226">
@@ -854,16 +926,6 @@
     <entry file="file://$PROJECT_DIR$/../thesis/random_mvdt/run.ipynb">
       <provider selected="true" editor-type-id="jupyter-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/../thesis/random_mvdt/prediction.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="302">
-          <caret line="24" selection-start-line="24" selection-end-line="24" />
-          <folding>
-            <element signature="e#0#18#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/run.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="85">
@@ -871,10 +933,33 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/../thesis/random_mvdt/prediction.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="374">
+          <caret line="24" selection-start-line="24" selection-end-line="24" />
+          <folding>
+            <element signature="e#0#18#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../thesis/random_mvdt/logr_dt.ipynb">
+      <provider selected="true" editor-type-id="jupyter-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../thesis/random_mvdt/data_split.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="183">
+          <caret line="85" selection-start-line="85" selection-end-line="85" />
+          <folding>
+            <element signature="e#3682#3725#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/../thesis/random_mvdt/run.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="226">
-          <caret line="101" selection-start-line="101" selection-end-line="101" />
+        <state relative-caret-position="98">
+          <caret line="74" selection-start-line="74" selection-end-line="74" />
           <folding>
             <element signature="e#0#19#0" expanded="true" />
           </folding>
