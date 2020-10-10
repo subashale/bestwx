@@ -7,7 +7,7 @@ class Main(wx.App, wx.lib.mixins.inspection.InspectionMixin):
         self.Init()  # initialize the inspection tool
         frame = Main_Frame(None, 1, title='Best Application')
         frame.SetMinSize(size=(900, 700))
-        frame.SetMaxSize(size=(1366, 768))
+        # frame.SetMaxSize(size=(1366, 768))
         self.SetTopWindow(frame)
         frame.Show()
         frame.Center()

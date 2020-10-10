@@ -4,7 +4,7 @@ import wx
 
 # common_view view
 from view.common_view.common_gridview import CommonGridView, TestFrame, Test
-
+from controller.common_view.common_pandas_function import *
 ## use multi thread concept to handle each functionaliy for each page
 # useful when clicking data, statistics.. buttons for each opened dataset
 # task assign: ashish ;#
@@ -13,8 +13,28 @@ class InsightPanel(wx.Panel):
 
     def __init__(self, parent):
         wx.Panel.__init__(self, parent=parent)
-
+        self.parent = parent
         self.panel_design()
+
+
+    def grid_generate(self, new_demo, data_frame):
+        import wx.grid as gridlib
+        import pandas as pd
+        infoTxt = (str(len(self.data_frame_list.head(100))) +
+                                         "/" + str(len(self.data_frame_list)))
+
+        data_frame = [data_frame.columns.values.tolist()] + data_frame.values.tolist()
+
+        grid = gridlib.Grid(new_demo)
+        grid.CreateGrid(len(data_frame)-1, len(data_frame[0]))
+
+        for index, value in enumerate(data_frame[0]):
+            grid.SetColLabelValue(index, value)
+
+        for row, j in enumerate(data_frame[1:]):
+            for col, value in enumerate(j):
+                grid.SetCellValue(row, col, str(value))
+        return grid, infoTxt
 
     def panel_design(self):
         # create notebook
@@ -22,9 +42,10 @@ class InsightPanel(wx.Panel):
 
         self.default_tab()
 
+        # self.new_demo_tab()
         # to display page to notebook
         sizer = wx.BoxSizer(wx.VERTICAL)
-        sizer.Add(self.nb_result, 1, wx.ALL | wx.EXPAND)
+        sizer.Add(self.nb_result, 1, wx.EXPAND)
         self.SetSizer(sizer)
 
         self.Fit()
@@ -32,7 +53,7 @@ class InsightPanel(wx.Panel):
         self.Show()
 
     def default_tab(self):
-        welcome_panel = wx.Panel(self.nb_result, -1)
+        welcome_panel = wx.Panel(self.nb_result, 0)
 
         vbox = wx.BoxSizer(wx.VERTICAL)
         welcome_intro = "Result Section"
@@ -42,165 +63,243 @@ class InsightPanel(wx.Panel):
         welcome_panel.SetSizer(vbox)
         self.nb_result.AddPage(welcome_panel, "Recent")
 
-    def working_area(self, data_frame_list, getFileName):
+    def working_area(self, data_frame_list, objDataHistory):
+        # new panel to work with
+        self.newPage = PageDesign(self, self.nb_result)
+
+        self.nb_result.AddPage(self.newPage.design(data_frame_list, objDataHistory.getData()[0]), objDataHistory.getData()[1])
+
+        self.nb_result.Layout()
+
+
+# Every new panel opeartion
+class PageDesign(wx.Panel):
+
+    def __init__(self, parent, panel):
+        wx.Panel.__init__(self, parent=parent)
+        self.panel = panel
+
+    def design(self, data_frame_list, fileLocation):
+        self.fileLocation = fileLocation
         self.data_frame_list = data_frame_list
-        # main panel
-        self.main_panel = wx.Panel(self)
 
-        # left panel init
-        self.left_panel = wx.Panel(self.main_panel)
-        self.left_panel.SetMaxSize((100, wx.EXPAND))
-        self.left_panel.SetBackgroundColour("white")
+        self.new_page_panel = wx.Panel(self.panel)
+        self.new_page_sizer = wx.BoxSizer(wx.VERTICAL)
 
-        # left panel design
-        self.left_panel_desing()
+        # top desing
+        button_16 = wx.Button(self.new_page_panel, wx.ID_ANY, "Top button 1: GO TO -->")
+        preprocessBtn = wx.Button(self.new_page_panel, wx.ID_ANY, "Preprocess")
+        trainingBtn = wx.Button(self.new_page_panel, wx.ID_ANY, "Training")
 
-        # right panel init
-        self.right_panel = wx.Panel(self.main_panel)
-        self.right_panel.SetMaxSize((wx.EXPAND, wx.EXPAND))
+        top_sizer = wx.BoxSizer(wx.HORIZONTAL)
+        top_sizer.Add(button_16, 0, 0, 0)
+        top_sizer.Add(preprocessBtn, 0, 0, 0)
+        top_sizer.Add(trainingBtn, 0, 0, 0)
 
-        # right panels, which are hidden except data_panel which is default
-        self.data_panel = wx.Panel(self.right_panel)
-        self.data_panel.SetBackgroundColour("white")
-        self.statistics_panel = wx.Panel(self.right_panel)
-        self.visualization_panel = wx.Panel(self.right_panel)
+        self.new_page_sizer.Add(top_sizer, 0, wx.EXPAND, 0)
+        # end top desing
 
-        # call right data panel
-        self.data_panel_desing()
+        # left desing
+        dataBtn = wx.Button(self.new_page_panel, wx.ID_ANY, "Data")
+        statisticsBtn = wx.Button(self.new_page_panel, wx.ID_ANY, "Statistics")
+        visualizationBtn = wx.Button(self.new_page_panel, wx.ID_ANY, "Visualization")
 
-        # positioning left and right panel(vz_right_panel)
-        hs_main_panel = wx.BoxSizer(wx.HORIZONTAL)
-        hs_main_panel.Add(self.left_panel, 1, wx.ALL | wx.EXPAND)
-        hs_main_panel.Add(self.right_panel, 1, wx.ALL | wx.EXPAND)
-        self.main_panel.SetSizer(hs_main_panel)
+        # button click events
+        dataBtn.Bind(wx.EVT_BUTTON, self.data_dispaly)
+        statisticsBtn.Bind(wx.EVT_BUTTON, self.stat_dispaly)
 
-        # main.SetSizer(vsz_top)
-        self.nb_result.AddPage(self.main_panel, getFileName, wx.ALL | wx.EXPAND)
+        self.bottom_sizer = wx.BoxSizer(wx.HORIZONTAL)
+        bottom_left_sizer = wx.BoxSizer(wx.VERTICAL)
+
+        bottom_left_sizer.Add(dataBtn, 0, 0, 0)
+        bottom_left_sizer.Add(statisticsBtn, 0, 0, 0)
+        bottom_left_sizer.Add(visualizationBtn, 0, 0, 0)
+
+        self.bottom_sizer.Add(bottom_left_sizer, 0, wx.ALIGN_CENTER_VERTICAL, 10)
+
+        self.new_page_sizer.Add(self.bottom_sizer, 0, wx.EXPAND, 0)
+
+        self.data_panel_design()
+        # self.statistics_panel_desing()
+
+        # end left desing
+
+        # # data grid and options
+        # self.data_panel = wx.Panel(self.new_page_panel, wx.ID_ANY)
+        # options = ['All', 'Missing rows', 'Not missing rows']
+        # self.grid_filter_cmb = wx.ComboBox(self.data_panel, choices=options, pos=(50, 50))
+        # self.grid_filter_cmb.SetStringSelection("All")
+        # self.grid_filter_cmb.SetEditable(False)
+        # self.grid_filter_cmb.Bind(wx.EVT_COMBOBOX, self.OnCombo)
+        # self.resultOfSelectionSt = wx.StaticText(self.data_panel, -1, "")
+        # self.data_grid = wx.grid.Grid(self.data_panel, wx.ID_ANY, size=(1, 1))
+        # show = 10
+        # self.data_grid, resultTxt = self.grid_generate(self.data_panel, data_frame_list.head(show))
+        # self.resultOfSelectionSt.SetLabel(resultTxt)
+        # self.missingMeans = wx.TextCtrl(self.data_panel)
+        # self.missingMeans.SetLabelText("',' sep without space")
+        #
+        # # put button, combo selection and text in one sizer
+        # sizer_grid_plus_btn_cmb = wx.BoxSizer(wx.HORIZONTAL)
+        # sizer_grid_plus_btn_cmb.Add(self.missingMeans, 1, wx.LEFT | wx.TOP, 10)
+        # sizer_grid_plus_btn_cmb.Add(self.grid_filter_cmb, 1, wx.LEFT | wx.TOP, 10)
+        # sizer_grid_plus_btn_cmb.Add(self.resultOfSelectionSt, 1, wx.LEFT | wx.TOP, 15)
+        #
+        # self.bottm_right_sizer = wx.BoxSizer(wx.VERTICAL)
+        # self.bottm_right_sizer.Add(sizer_grid_plus_btn_cmb, wx.ALIGN_RIGHT, wx.TOP, 10)
+        #
+        # self.grid_position = 0
+        # if len(data_frame_list.head(show)) < 20:
+        #     self.grid_position = 0
+        # else:
+        #     self.data_panel = 1
+        #
+        # self.bottm_right_sizer.Add(self.data_grid, self.grid_position, wx.ALL | wx.EXPAND | wx.LEFT | wx.TOP, 10)
+        # self.data_grid.AutoSize()
+        # self.data_panel.SetSizer(self.bottm_right_sizer)
+
+        # end working area
+
+        self.new_page_panel.SetSizer(self.new_page_sizer)
+        self.new_page_panel.Layout()
+
+        return self.new_page_panel
+
+    def data_panel_design(self):
+        # data grid and options
+        self.data_panel = wx.Panel(self.new_page_panel, wx.ID_ANY)
+        options = ['All', 'Missing rows', 'Not missing rows']
+        self.grid_filter_cmb = wx.ComboBox(self.data_panel, choices=options, pos=(50, 50))
+        self.grid_filter_cmb.SetStringSelection("All")
+        self.grid_filter_cmb.SetEditable(False)
+        self.grid_filter_cmb.Bind(wx.EVT_COMBOBOX, self.OnCombo)
+        self.resultOfSelectionSt = wx.StaticText(self.data_panel, -1, "")
+        self.data_grid = wx.grid.Grid(self.data_panel, wx.ID_ANY, size=(1, 1))
+        show = 10
+        self.data_grid, resultTxt = self.grid_generate(self.data_panel, self.data_frame_list.head(show))
+        self.resultOfSelectionSt.SetLabel(resultTxt)
+        self.missingMeans = wx.TextCtrl(self.data_panel)
+        self.missingMeans.SetLabelText("',' sep without space")
+
+        # put button, combo selection and text in one sizer
+        sizer_grid_plus_btn_cmb = wx.BoxSizer(wx.HORIZONTAL)
+        sizer_grid_plus_btn_cmb.Add(self.missingMeans, 1, wx.LEFT | wx.TOP, 10)
+        sizer_grid_plus_btn_cmb.Add(self.grid_filter_cmb, 1, wx.LEFT | wx.TOP, 10)
+        sizer_grid_plus_btn_cmb.Add(self.resultOfSelectionSt, 1, wx.LEFT | wx.TOP, 15)
+
+        self.bottm_right_sizer = wx.BoxSizer(wx.VERTICAL)
+        self.bottm_right_sizer.Add(sizer_grid_plus_btn_cmb, wx.ALIGN_RIGHT, wx.TOP, 10)
+
+        self.grid_position = 0
+        if len(self.data_frame_list.head(show)) < 20:
+            self.grid_position = 0
+        else:
+            self.data_panel = 1
+
+        self.bottm_right_sizer.Add(self.data_grid, self.grid_position, wx.ALL | wx.EXPAND | wx.LEFT | wx.TOP, 10)
+        self.data_grid.AutoSize()
+        self.data_panel.SetSizer(self.bottm_right_sizer)
+
+        self.bottom_sizer.Add(self.data_panel, 0, wx.ALL | wx.EXPAND | wx.LEFT | wx.TOP, 10)
+
+    def statistics_panel_desing(self):
+        self.statistics_panel = wx.Panel(self.new_page_panel, wx.ID_ANY)
+
+        self.welcome = wx.StaticText(self.statistics_panel, -1, "asdfadf")
+        # put button, combo selection and text in one sizer
+        sizer_grid_plus_btn_cmb = wx.BoxSizer(wx.HORIZONTAL)
+        sizer_grid_plus_btn_cmb.Add(self.welcome, 1, wx.LEFT | wx.TOP, 15)
+
+        self.statistics_panel.SetSizer(sizer_grid_plus_btn_cmb)
+
+        self.bottom_sizer.Add(self.statistics_panel, 0, wx.ALL | wx.EXPAND | wx.LEFT | wx.TOP, 10)
+
+    def grid_generate(self, new_demo, data_frame):
+        import wx.grid as gridlib
+        import pandas as pd
+        infoTxt = (str(len(data_frame)) +
+                                         "/" + str(len(self.data_frame_list)))
+
+        data_frame = [data_frame.columns.values.tolist()] + data_frame.values.tolist()
+
+        grid = gridlib.Grid(new_demo)
+        # sizer = wx.BoxSizer(wx.HORIZONTAL)
+        #data_frame[0] list of columns
+        print(len(data_frame), len(data_frame[0]))
+        grid.CreateGrid(len(data_frame)-1, len(data_frame[0]))
 
 
-    # left panel desing
-    def left_panel_desing(self):
+        for index, value in enumerate(data_frame[0]):
+            grid.SetColLabelValue(index, value)
 
-        # buttons for left panel
-        btn_data = wx.Button(self.left_panel, label="Data", size=(wx.EXPAND, 50))
-        btn_statistics = wx.Button(self.left_panel, label="Statistics", size=(wx.EXPAND, 50))
-        btn_visualization = wx.Button(self.left_panel, label="Visualization", size=(wx.EXPAND, 50))
+        for row, j in enumerate(data_frame[1:]):
+            for col, value in enumerate(j):
+                grid.SetCellValue(row, col, str(value))
+        return grid, infoTxt
+        # sizer.Add(grid, 1, wx.ALL | wx.EXPAND)
 
-        # left panel button click handler
-        btn_data.Bind(wx.EVT_BUTTON, self.show_data)
-        btn_statistics.Bind(wx.EVT_BUTTON, self.show_statistics)
-        btn_visualization.Bind(wx.EVT_BUTTON, self.show_visualization)
+    def OnCombo(self, event):
+        if self.data_grid:
+            self.bottm_right_sizer.Detach(self.data_grid)
+            self.data_grid.Destroy()
+        filterSelected = self.grid_filter_cmb.GetValue()
+        resultTxt = ""
+        data = self.data_frame_list.head(10)
 
-        # # button positioning for left panel
-        vs_left_panel = wx.BoxSizer(wx.VERTICAL)
-        vs_left_panel.Add((-1, 180), proportion=1, flag=wx.EXPAND)
-        vs_left_panel.Add(btn_data, 0, wx.ALL, 5)
-        vs_left_panel.Add(btn_statistics, 1, wx.ALL, 5)
-        vs_left_panel.Add(btn_visualization, 2, wx.ALL, 5)
-        vs_left_panel.Add((-1, 180), proportion=1, flag=wx.EXPAND)
+        missingList = self.missingMeans.GetValue()
+        if missingList == "',' sep without space":
+            missingList = ""
 
-        self.left_panel.SetSizer(vs_left_panel)
+        if filterSelected == "All":
+            # if all then get all data and informaiton of len in text and re
+            self.data_grid, resultTxt = self.grid_generate(self.data_panel, data)
+            print(filterSelected)
+        elif filterSelected == "Missing rows":
+            data = missing_df(self.fileLocation, missingList)
+            self.data_grid, resultTxt = self.grid_generate(self.data_panel, data)
+            print(filterSelected)
+        elif filterSelected == "Not missing rows":
+            data = not_missing_df(self.fileLocation, missingList)
+            self.data_grid, resultTxt = self.grid_generate(self.data_panel, data)
+            print(filterSelected)
 
-    # data panel desing
-    def data_panel_desing(self):
+        if len(data) > 20:
+            self.grid_position = 1
+        else:
+            self.grid_position = 0
 
-        # to send data directly for preprocessing and model training
-        btn_preprocess = wx.Button(self.data_panel, label="Pre-Process")
-        btn_train_model = wx.Button(self.data_panel, label="Train Model")
+        self.resultOfSelectionSt.SetLabel(resultTxt)
+        self.bottm_right_sizer.Add(self.data_grid, self.grid_position, wx.ALL | wx.EXPAND | wx.LEFT | wx.TOP, 10)
+        self.data_grid.AutoSize()
 
-        # designing filter buttons for gird
-        btn_filter = wx.Button(self.data_panel, label="filter")
-        btn_optOne = wx.Button(self.data_panel, label="option one")
 
-        # positioning filter buttons for grid
-        hz_data_option = wx.BoxSizer(wx.HORIZONTAL)
-        hz_data_option.Add(btn_preprocess, 0, wx.ALL, 5)
-        hz_data_option.Add(btn_train_model, 0,wx.ALL, 5)
-        hz_data_option.Add(btn_filter, 0, wx.ALL, 5)
-        hz_data_option.Add(btn_optOne, 0, wx.ALL, 5)
-        #self.data_panel.SetSizer(hz_data_option)
+        self.new_page_panel.Layout()
+        self.panel.Layout()
+        return self.new_page_panel
 
-        vz_data_panel = wx.BoxSizer(wx.VERTICAL)
-        vz_data_panel.Add(hz_data_option, wx.CENTER)
-        #vz_data_panel.Add(self.grid_design(self.data_panel), wx.ALL | wx.EXPAND)
-        vz_data_panel.Add(self.grid_design_huge(self.data_panel), wx.ALL | wx.EXPAND)
-        self.data_panel.SetSizer(vz_data_panel)
+    def data_dispaly(self, event):
+        # targeting each widgets by
+        # keep single panels
+        if self.statistics_panel:
+            self.statistics_panel.Hide()
 
-        # positioning to right main panel but if I use this it will create problem while clicking other buttons stat, viz
-        hz_right_panel = wx.BoxSizer(wx.HORIZONTAL)
-        hz_right_panel.Add(self.data_panel, wx.ALL | wx.EXPAND)
-        self.right_panel.SetSizer(hz_right_panel)
-
-    # statistics panel design
-    def statistics_panel_design(self):
-        # statistics content
-        vz_statistics_panel = wx.BoxSizer(wx.VERTICAL)
-        welcome_intro_result = "Satistics merge desing from friends"
-        welcome_page = wx.StaticText(self.statistics_panel, -1, welcome_intro_result)
-        vz_statistics_panel.Add(welcome_page, 0, wx.ALIGN_CENTER)
-        self.statistics_panel.SetSizer(vz_statistics_panel)
-
-        # self.statistics_panel.Layout()
-        # self.statistics_panel.Fit()
-        # self.statistics_panel.Show()
-
-        hz_right_panel = wx.BoxSizer(wx.HORIZONTAL)
-        hz_right_panel.Add(self.statistics_panel, wx.ALL | wx.EXPAND)
-        self.right_panel.SetSizer(hz_right_panel)
-
-    # visualization panel design
-    def visualization_panel_design(self):
-        vbox = wx.BoxSizer(wx.VERTICAL)
-        welcome_intro_result = "Validation panel merge design from friends"
-
-        welcome_page = wx.StaticText(self.visualization_panel, -1, welcome_intro_result)
-        vbox.Add(welcome_page, 0, wx.ALIGN_CENTER)
-
-        self.visualization_panel.SetSizer(vbox)
-        self.visualization_panel.Layout()
-        self.visualization_panel.Fit()
-        self.visualization_panel.Show()
-
-    # result pane left side panel; data button desing
-    def show_data(self, event):
-        # hide other buttons panels, cannot call unexists object, uff
-        self.statistics_panel.Hide()
-        self.visualization_panel.Hide()
+        self.data_panel_design()
         self.data_panel.Show()
-        self.data_panel_desing()
 
-        # this condition doesnot work if multiple data is imported
-        # because the self.grid is already exist for another page, dataset
-        # so check for each possible condition like make different object for each notepad's grid;#
+        self.new_page_panel.Layout()
+        # while creating individual panels
+        # if self.grid_options.Show() == False:
+        #     self.grid_options.Show()
 
-    # result pane left side statistics button desing
-    def show_statistics(self, event):
-        self.data_panel.Hide()
-        self.visualization_panel.Hide()
+    def stat_dispaly(self, event):
+        # self.grid_options.Hide()
+        if self.data_panel:
+            self.data_panel.Hide()
+
+
+        self.statistics_panel_desing()
         self.statistics_panel.Show()
-        self.statistics_panel_design()
-
-
-    def show_visualization(self, event):
-        self.data_panel.Hide()
-        self.statistics_panel.Hide()
-        #self.visualization_panel.Show()
-        self.visualization_panel_design()
-
-    # for displaying grid in notebook only, it will disply in page; we need to send nb object
-    def grid_design(self, panel):
-        # it will take grid object from CommonPanelView and send to grid
-        # send grid to process pane; notebook object and data frame list and name
-        grid = CommonGridView(self, panel)
-        return grid.grid_generate(self.data_frame_list)
-
-        # for huge data
-    def grid_design_huge(self, panel):
-        # it will take grid object from CommonPanelView and send to grid
-        # send grid to processs pane; notebook object and data frame list and name
-        # grid = Test(self)
-        # self.nb_process.AddPage(grid.grid_generate(dataframe_list), getFileName, wx.ALL | wx.EXPAND)
-
-        # huge
-        grid = Test(self, panel)
-        return grid.grid_generate(self.data_frame_list)
+        self.new_page_panel.Layout()
+        # self.statistics_panel.Show()
+        # self.grid_1.Destroy() # deletes the widiges
+        # self.data_grid.Hide()

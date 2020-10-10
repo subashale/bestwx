@@ -22,7 +22,7 @@ class CommonGridView(wx.Panel):
         grid = gridlib.Grid(self.notebook)
         sizer = wx.BoxSizer(wx.HORIZONTAL)
 
-        grid.CreateGrid(len(data_frame), len(data_frame[0]))
+        grid.CreateGrid(len(data_frame)-1, len(data_frame[0]))
 
         for index, value in enumerate(data_frame[0]):
             grid.SetColLabelValue(index, value)
@@ -80,9 +80,9 @@ class Test(wx.Panel):
 
 
     def grid_generate(self, dataframe):
-        dataframe = pd.concat([dataframe, dataframe, dataframe, dataframe, dataframe, dataframe, dataframe, dataframe])
-        dataframe = pd.concat([dataframe, dataframe])
-        dataframe = pd.concat([dataframe, dataframe, dataframe, dataframe, dataframe])
+        # dataframe = pd.concat([dataframe, dataframe, dataframe, dataframe, dataframe, dataframe, dataframe, dataframe])
+        # dataframe = pd.concat([dataframe, dataframe])
+        # dataframe = pd.concat([dataframe, dataframe, dataframe, dataframe, dataframe])
 
         cols = dataframe.columns.values.tolist()
         data = dataframe.values.tolist()

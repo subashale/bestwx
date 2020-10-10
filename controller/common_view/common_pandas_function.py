@@ -23,3 +23,26 @@ def make_df_list(getFileLocation):
 
     return df_list
 
+# dataframe of missing rows
+#df = file location
+def missing_df(dfLoc, missingAre):
+    print(missingAre)
+    df = pd.read_csv(dfLoc, na_values=missingAre.split(","))
+    # if len(missingAre) == 0:
+    #     return df[df.isnull().any(axis=1)]
+    # else:
+    #     pd.read_csv(df, na_values=missingAre.split(","))
+
+    return df[df.isnull().any(axis=1)]
+
+def not_missing_df(dfLoc, missingAre):
+
+    #if there is space before after ',' then remove
+
+    df = pd.read_csv(dfLoc, na_values=missingAre.split(","))
+    dfObj = df
+    return dfObj.drop(missing_df(dfLoc, missingAre).index)
+
+# dataframe of  count of missing data
+def count_missing_df():
+    pass

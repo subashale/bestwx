@@ -1,5 +1,6 @@
 import wx
 import wx.lib.agw.aui as aui
+import pandas as pd
 
 # common_view view
 from view.common_view.common_file_dialog import open_file_dialog as ofd
@@ -8,6 +9,7 @@ from view.common_view.common_file_dialog import open_file_dialog as ofd
 from controller.training.training import Training
 
 # loading its child views
+from view.common_view.common_gridview import Test
 from view.training.load_data import LoadData
 
 class TrainingPanel(wx.Panel):
@@ -39,16 +41,16 @@ class TrainingPanel(wx.Panel):
     # wokring area for each step of model training
     def main_area(self):
 
-        self.panel = wx.Panel(self, -1)
+        self.panel = wx.Panel(self.nb_training, -1)
 
         self.display_panel = wx.Panel(self.panel)
         #self.display_panel.SetMaxSize((wx.EXPAND, 600))
-        self.display_panel.SetBackgroundColour("red")
+        self.display_panel.SetBackgroundColour("#707772")
         self.navigation_panel = wx.Panel(self.panel)
         self.navigation_panel.SetMaxSize((wx.EXPAND, 40))
-        self.navigation_panel.SetBackgroundColour("blue")
+        self.navigation_panel.SetBackgroundColour("#518962")
 
-        #self.default_panel()
+        self.default_panel()
         self.navigation_area()
 
         self.basicsizer = wx.BoxSizer(wx.VERTICAL)
@@ -62,13 +64,14 @@ class TrainingPanel(wx.Panel):
 
     # design for top panel to work
     def default_panel(self):
-        vbox = wx.BoxSizer(wx.VERTICAL)
+        self.vbox = wx.BoxSizer(wx.VERTICAL)
         self.load_data_panel = wx.Panel(self.display_panel)
         welcome_intro = "Training Section, left side file explore, right side data description"
-        wx.StaticText(self.load_data_panel, -1, welcome_intro)
-        vbox.Add(self.load_data_panel, 0, wx.ALIGN_CENTER)
+        self.name = wx.StaticText(self.load_data_panel, -1, welcome_intro)
+        self.vbox.Add(self.load_data_panel, 0, wx.ALIGN_CENTER)
 
-        self.display_panel.SetSizer(vbox)
+        self.display_panel.SetSizer(self.vbox)
+        self.display_panel.Layout()
 
     # after opening data from file dialog, describe it with its basic properties else directly go to next step
     # basic properties would be like dataset full name of dataset;
@@ -83,7 +86,7 @@ class TrainingPanel(wx.Panel):
         # design for bottom panel
         vbz = wx.BoxSizer(wx.VERTICAL)
         hbz = wx.BoxSizer(wx.HORIZONTAL)
-        self.btn_load_data = wx.Button(self.navigation_panel, 1, 'Load Data')
+        self.btn_load_data = wx.Button(self.navigation_panel, 1, 'New Data')
         self.btn_select_task = wx.Button(self.navigation_panel, 2, 'Select Task')
         self.btn_prepare_target = wx.Button(self.navigation_panel, 3, 'Prepare Target')
         self.btn_select_input = wx.Button(self.navigation_panel, 3, 'Select Input')
@@ -99,7 +102,7 @@ class TrainingPanel(wx.Panel):
         self.btn_result.Bind(wx.EVT_BUTTON, self.onClickResult)
 
         # Disable buttons
-        self.btn_select_task.Enable(False)
+        # self.btn_select_task.Enable(False)
         self.btn_prepare_target.Enable(False)
         self.btn_select_input.Enable(False)
         self.btn_model_type.Enable(False)
@@ -121,23 +124,37 @@ class TrainingPanel(wx.Panel):
         self.obj_LoadData = LoadData(self)
         self.getFileLocation, self.getFileName = self.obj_LoadData.open_load_data()
 
+
         print(self.getFileLocation, self.getFileName)
         if self.getFileLocation and self.getFileName != "":
             # enable next button, btn select task
             self.obj_LoadData.display_data_properties()
             self.btn_select_task.Enable(True)
 
-        # try:
-        #     self.getFileLocation, self.getFileName = ofd()
-        #     if self.getFileLocation and self.getFileName != "":
-        #
-        #         # enable next button, btn select task
-        #         self.btn_select_task.Enable(True)
-        # except:
-        #     print("got cancelled")
+        df = pd.read_csv(self.getFileLocation)
+        self.newDataInfo()
+        self.grid_design_huge(df)
+
+
+    def grid_design_huge(self, dataframe_list):
+
+        self.grid = Test(self, self.display_panel)
+        self.gridData = self.grid.grid_generate(dataframe_list.head(100))
+
+        self.vbox.Add(self.gridData, 1, wx.EXPAND)
+
+        self.display_panel.Layout()
+        self.nb_training.Layout()
+    # new code
+    def newDataInfo(self):
+        self.name.SetLabel(self.getFileName)
+        self.display_panel.Layout()
 
     # action for selecting task
     def onClickedSelectTask(self, event):
+        self.display_panel.Hide()
+        self.select_task_panel = wx.Panel(self.nb_training)
+
     #if selection is prediction then choose label as well
     # if other skip prepare target;#
         print("select task clicked")
@@ -188,5 +205,8 @@ class TrainingPanel(wx.Panel):
 
         obj = Training()
         obj.read_hold(self.getFileLocation, self.task)
+
+
+    # new codes
 
 

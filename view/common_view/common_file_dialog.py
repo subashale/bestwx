@@ -22,7 +22,7 @@ def open_file_dialog():
     if dlg_openFileDialog.ShowModal() == wx.ID_CANCEL:
         dlg_openFileDialog.Destroy()
         frame.Destroy()
-        return False
+        return
 
     else:
         getFileLocation = dlg_openFileDialog.GetPath()

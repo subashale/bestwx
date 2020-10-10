@@ -2,18 +2,20 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="c8cb2d60-5af8-4251-bd08-24f7c9a3a1ec" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/../thesis/random_mvdt/logr_dt.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/bestwxpy.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/bestwxpy.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../thesis/random_mvdt/.ipynb_checkpoints/data_viz-checkpoint.py" beforeDir="false" afterPath="$PROJECT_DIR$/../thesis/random_mvdt/.ipynb_checkpoints/data_viz-checkpoint.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../thesis/random_mvdt/.ipynb_checkpoints/logr_dt-checkpoint.ipynb" beforeDir="false" afterPath="$PROJECT_DIR$/../thesis/random_mvdt/.ipynb_checkpoints/logr_dt-checkpoint.ipynb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../thesis/random_mvdt/.ipynb_checkpoints/prediction-checkpoint.py" beforeDir="false" afterPath="$PROJECT_DIR$/../thesis/random_mvdt/.ipynb_checkpoints/prediction-checkpoint.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../thesis/random_mvdt/.ipynb_checkpoints/run-checkpoint.ipynb" beforeDir="false" afterPath="$PROJECT_DIR$/../thesis/random_mvdt/.ipynb_checkpoints/run-checkpoint.ipynb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../thesis/random_mvdt/data_viz.py" beforeDir="false" afterPath="$PROJECT_DIR$/../thesis/random_mvdt/data_viz.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../thesis/random_mvdt/logr_dt.ipynb" beforeDir="false" afterPath="$PROJECT_DIR$/../thesis/random_mvdt/logr_dt.ipynb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../thesis/random_mvdt/prediction.py" beforeDir="false" afterPath="$PROJECT_DIR$/../thesis/random_mvdt/prediction.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../thesis/random_mvdt/run.ipynb" beforeDir="false" afterPath="$PROJECT_DIR$/../thesis/random_mvdt/run.ipynb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/controller/common_view/common_pandas_function.py" beforeDir="false" afterPath="$PROJECT_DIR$/controller/common_view/common_pandas_function.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/run/run.exe" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/auimanr.py" beforeDir="false" afterPath="$PROJECT_DIR$/test/auimanr.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/view/common_view/common_file_dialog.py" beforeDir="false" afterPath="$PROJECT_DIR$/view/common_view/common_file_dialog.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/view/common_view/common_gridview.py" beforeDir="false" afterPath="$PROJECT_DIR$/view/common_view/common_gridview.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/view/insight/insight_panel.py" beforeDir="false" afterPath="$PROJECT_DIR$/view/insight/insight_panel.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/view/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/view/main.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/view/main_frame/main_frame.py" beforeDir="false" afterPath="$PROJECT_DIR$/view/main_frame/main_frame.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/view/new_process/new_process_panel.py" beforeDir="false" afterPath="$PROJECT_DIR$/view/new_process/new_process_panel.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/view/training/training_panel.py" beforeDir="false" afterPath="$PROJECT_DIR$/view/training/training_panel.py" afterDir="false" />
     </list>
-    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -53,22 +55,6 @@
     <expand />
     <select />
   </component>
-  <component name="FileEditorManager">
-    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/../thesis/random_mvdt/logr_dt.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="566">
-              <caret line="118" column="37" selection-start-line="118" selection-start-column="29" selection-end-line="118" selection-end-column="37" />
-              <folding>
-                <element signature="e#0#19#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-    </leaf>
-  </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
@@ -76,171 +62,32 @@
       </list>
     </option>
   </component>
-  <component name="FindInProjectRecents">
-    <findStrings>
-      <find>Layou</find>
-      <find>grid_design</find>
-      <find>==</find>
-      <find>process</find>
-      <find>working_area</find>
-      <find>left</find>
-      <find>Bind</find>
-      <find>nb_res</find>
-      <find>getFileName</find>
-      <find>common_function</find>
-      <find>anno</find>
-      <find>vertical</find>
-      <find>alred</find>
-      <find>tree</find>
-      <find>fileLocation</find>
-      <find>result_pane</find>
-      <find>recent_activity</find>
-      <find>preprocess_pane</find>
-      <find>models</find>
-      <find>default</find>
-      <find>GetPage</find>
-      <find>addPage</find>
-      <find>grid</find>
-      <find>self.grid</find>
-      <find>got canceled</find>
-      <find>hbs_lp</find>
-      <find>hbz</find>
-      <find>self.panel</find>
-      <find>self.data_panel</find>
-      <find>print(</find>
-    </findStrings>
-  </component>
   <component name="Git.Settings">
-    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/../thesis/random_mvdt" />
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
-  <component name="IdeDocumentHistory">
-    <option name="CHANGED_PATHS">
-      <list>
-        <option value="$PROJECT_DIR$/view/new_process/temp_data_display.py" />
-        <option value="$PROJECT_DIR$/controller/MainFrame.py" />
-        <option value="$PROJECT_DIR$/test/auimanr.py" />
-        <option value="$PROJECT_DIR$/test/sf.py" />
-        <option value="$PROJECT_DIR$/view/result_panels.py" />
-        <option value="$PROJECT_DIR$/test/layout.py" />
-        <option value="$PROJECT_DIR$/event_execute/main_frame/MainFrame.py" />
-        <option value="$PROJECT_DIR$/test/consol.py" />
-        <option value="$PROJECT_DIR$/view/training/training.py" />
-        <option value="$PROJECT_DIR$/test/old desgin/mainframeAUI.py" />
-        <option value="$PROJECT_DIR$/view/common_view/common_panel.py" />
-        <option value="$PROJECT_DIR$/controller/common/common.py" />
-        <option value="$PROJECT_DIR$/test/notecode.py" />
-        <option value="$PROJECT_DIR$/view/result/result.py" />
-        <option value="$PROJECT_DIR$/test/text.py" />
-        <option value="$PROJECT_DIR$/test/vhbox.py" />
-        <option value="$PROJECT_DIR$/view/common_view/common_file_dialog.py" />
-        <option value="$PROJECT_DIR$/test/xls/XLSGridDemo.py" />
-        <option value="$PROJECT_DIR$/controller/common/pandas_functions.py" />
-        <option value="$PROJECT_DIR$/controller/common/common_function.py" />
-        <option value="$PROJECT_DIR$/controller/common/common_pandas_function.py" />
-        <option value="$PROJECT_DIR$/event_execute/__init__.py" />
-        <option value="$PROJECT_DIR$/controller/__init__.py" />
-        <option value="$PROJECT_DIR$/view/main_frame/__init__.py" />
-        <option value="$PROJECT_DIR$/view/result/result_panel.py" />
-        <option value="$PROJECT_DIR$/view/insight/result_panel.py" />
-        <option value="$PROJECT_DIR$/controller/ml_lib/supervise.py" />
-        <option value="$PROJECT_DIR$/ml_lib/supervise.py" />
-        <option value="$PROJECT_DIR$/ml_lib/supervised.py" />
-        <option value="$PROJECT_DIR$/controller/training/training.py" />
-        <option value="$PROJECT_DIR$/view/pre_process/preprocess.py" />
-        <option value="$PROJECT_DIR$/view/preprocess/preprocess.py" />
-        <option value="$PROJECT_DIR$/view/__init__.py" />
-        <option value="$PROJECT_DIR$/view/main.py" />
-        <option value="$PROJECT_DIR$/run.py" />
-        <option value="$PROJECT_DIR$/test/xmldesing/cal.xrc" />
-        <option value="$PROJECT_DIR$/test/xmldesing/cal.pyw.py" />
-        <option value="$PROJECT_DIR$/view/new_process/new_process_panel.py" />
-        <option value="$PROJECT_DIR$/view/main_frame/main_frame.py" />
-        <option value="$PROJECT_DIR$/test/old desgin/old_insight_panel.py" />
-        <option value="$PROJECT_DIR$/test/panels.py" />
-        <option value="$PROJECT_DIR$/view/common_view/common_gridview.py" />
-        <option value="$PROJECT_DIR$/test/old desgin/old_result_panel.py" />
-        <option value="$PROJECT_DIR$/view/insight/insight_panel.py" />
-        <option value="$PROJECT_DIR$/view/training/training_panel.py" />
-        <option value="$PROJECT_DIR$/view/training/load_data.py" />
-        <option value="$PROJECT_DIR$/../thesis/random_mvdt/prediction.py" />
-        <option value="$PROJECT_DIR$/../thesis/random_mvdt/run.py" />
-        <option value="$PROJECT_DIR$/../thesis/random_mvdt/data_prepare.py" />
-        <option value="$PROJECT_DIR$/../thesis/random_mvdt/data_split.py" />
-        <option value="$PROJECT_DIR$/../thesis/random_mvdt/logr_dt.py" />
-      </list>
-    </option>
-  </component>
-  <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="479" />
-    <option name="y" value="-8" />
-    <option name="width" value="697" />
-    <option name="height" value="775" />
-  </component>
+  <component name="JupyterTrust" id="c34e1d77-f081-4729-be7c-02afa5018926" />
+  <component name="ProjectId" id="1iTTwzh9ya57yqWX2b0jYavUVcQ" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
-  <component name="ProjectView">
-    <navigator proportions="" version="1">
-      <foldersAlwaysOnTop value="true" />
-    </navigator>
-    <panes>
-      <pane id="ProjectPane">
-        <subPane>
-          <expand>
-            <path>
-              <item name="bestwx" type="b2602c69:ProjectViewProjectNode" />
-              <item name="bestwx" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="bestwx" type="b2602c69:ProjectViewProjectNode" />
-              <item name="random_mvdt" type="462c0819:PsiDirectoryNode" />
-            </path>
-          </expand>
-          <select />
-        </subPane>
-      </pane>
-      <pane id="Scope">
-        <subPane subId="Scope 'Project Files'; set:Project Files; class com.intellij.psi.search.scope.ProjectFilesScope">
-          <expand>
-            <path>
-              <item name="bestwxpy" type="3d21c010:ScopeViewTreeModel$ProjectNode" />
-              <item name="" type="442cc68d:ScopeViewTreeModel$RootNode" />
-            </path>
-            <path>
-              <item name="bestwxpy" type="3d21c010:ScopeViewTreeModel$ProjectNode" />
-              <item name="" type="442cc68d:ScopeViewTreeModel$RootNode" />
-              <item name="view" type="9f88c78c:ScopeViewTreeModel$FileNode" />
-            </path>
-            <path>
-              <item name="bestwxpy" type="3d21c010:ScopeViewTreeModel$ProjectNode" />
-              <item name="" type="442cc68d:ScopeViewTreeModel$RootNode" />
-              <item name="view" type="9f88c78c:ScopeViewTreeModel$FileNode" />
-              <item name="new_process" type="9f88c78c:ScopeViewTreeModel$FileNode" />
-            </path>
-          </expand>
-          <select />
-        </subPane>
-      </pane>
-    </panes>
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../thesis/random_mvdt" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/view/insight" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
     <property name="node.js.path.for.package.tslint" value="project" />
     <property name="node.js.selected.package.eslint" value="(autodetect)" />
     <property name="node.js.selected.package.tslint" value="(autodetect)" />
-    <property name="nodejs_interpreter_path.stuck_in_default_project" value="C:/Program Files/nodejs/node" />
+    <property name="nodejs_interpreter_path.stuck_in_default_project" value="$PROJECT_DIR$/../../../../../Program Files/nodejs/node" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
     <property name="settings.editor.selected.configurable" value="preferences.lookFeel" />
   </component>
   <component name="RecentsManager">
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="C:\Users\subash\Documents\ml\prj\bestwxpy\view\main_frame" />
-      <recent name="C:\Users\subash\Documents\ml\prj\bestwxpy\event_execute\new_process" />
-      <recent name="C:\Users\subash\Documents\ml\prj\bestwxpy\view\processing_panel" />
-    </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\Users\subash\Documents\ml\prj\bestwxpy" />
       <recent name="C:\Users\subash\Documents\ml\prj\bestwxpy\test\old desgin" />
@@ -248,21 +95,15 @@
       <recent name="C:\Users\subash\Documents\ml\prj\bestwxpy\event_execute\main_frame" />
       <recent name="C:\Users\subash\Documents\ml\prj\bestwxpy\view\new_process" />
     </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\subash\Documents\GitHub\bestwx\view\insight" />
+      <recent name="C:\Users\subash\Documents\ml\prj\bestwxpy\view\main_frame" />
+      <recent name="C:\Users\subash\Documents\ml\prj\bestwxpy\event_execute\new_process" />
+      <recent name="C:\Users\subash\Documents\ml\prj\bestwxpy\view\processing_panel" />
+    </key>
   </component>
-  <component name="RunDashboard">
-    <option name="ruleStates">
-      <list>
-        <RuleState>
-          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
-        </RuleState>
-        <RuleState>
-          <option name="name" value="StatusDashboardGroupingRule" />
-        </RuleState>
-      </list>
-    </option>
-  </component>
-  <component name="RunManager" selected="Python.logr_dt">
-    <configuration name="cal.pyw" type="PythonConfigurationType" factoryName="Python" temporary="true">
+  <component name="RunManager" selected="Python.run">
+    <configuration name="auimanr" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="bestwxpy" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -270,12 +111,12 @@
         <env name="PYTHONUNBUFFERED" value="1" />
       </envs>
       <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/test/xmldesing" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/test" />
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/test/xmldesing/cal.pyw.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/test/auimanr.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -374,14 +215,15 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Python.run" />
+        <item itemvalue="Python.auimanr" />
         <item itemvalue="Python.logr_dt" />
         <item itemvalue="Python.run (1)" />
-        <item itemvalue="Python.run" />
         <item itemvalue="Python.panels" />
-        <item itemvalue="Python.cal.pyw" />
       </list>
     </recent_temporary>
   </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="SvnConfiguration">
     <configuration />
   </component>
@@ -451,6 +293,13 @@
       <workItem from="1566593717340" duration="2022000" />
       <workItem from="1566821175793" duration="4590000" />
       <workItem from="1567085519897" duration="2603000" />
+      <workItem from="1601930832534" duration="3399000" />
+      <workItem from="1601964397231" duration="8418000" />
+      <workItem from="1602000285621" duration="14013000" />
+      <workItem from="1602061291496" duration="21184000" />
+      <workItem from="1602186749233" duration="5771000" />
+      <workItem from="1602270966095" duration="4517000" />
+      <workItem from="1602318032568" duration="24282000" />
     </task>
     <task id="LOCAL-00001" summary="prepare new data, more than two features tested, basic setup for ide">
       <created>1565984825676</created>
@@ -518,9 +367,6 @@
     <option name="localTasksCounter" value="10" />
     <servers />
   </component>
-  <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="438267000" />
-  </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
       <is-autoscroll-to-source value="true" />
@@ -530,57 +376,15 @@
       <is-autoscroll-to-source value="true" />
     </todo-panel>
   </component>
-  <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1382" height="784" extended-state="6" />
-    <editor active="true" />
-    <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.18683812" />
-      <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
-      <window_info id="Favorites" order="2" side_tool="true" />
-      <window_info anchor="bottom" id="Message" order="0" />
-      <window_info anchor="bottom" id="Find" order="1" weight="0.32872504" />
-      <window_info anchor="bottom" id="Run" order="2" weight="0.3686636" />
-      <window_info anchor="bottom" id="Debug" order="3" weight="0.4669739" />
-      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
-      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
-      <window_info anchor="bottom" id="TODO" order="6" weight="0.32961783" />
-      <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Version Control" order="8" weight="0.32872504" />
-      <window_info anchor="bottom" id="Database Changes" order="9" />
-      <window_info anchor="bottom" id="Event Log" order="10" side_tool="true" />
-      <window_info anchor="bottom" id="Terminal" order="11" weight="0.32872504" />
-      <window_info anchor="bottom" id="Python Console" order="12" weight="0.32872504" />
-      <window_info anchor="right" id="Commander" order="0" weight="0.4" />
-      <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
-      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
-      <window_info anchor="right" id="SciView" order="3" weight="0.35854766" />
-      <window_info anchor="right" id="Database" order="4" weight="0.32980332" />
-    </layout>
-  </component>
   <component name="TypeScriptGeneratedFilesManager">
-    <option name="version" value="1" />
+    <option name="version" value="3" />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
     <option name="TAB_STATES">
       <map>
         <entry key="MAIN">
           <value>
-            <State>
-              <option name="RECENTLY_FILTERED_USER_GROUPS">
-                <collection />
-              </option>
-              <option name="RECENTLY_FILTERED_BRANCH_GROUPS">
-                <collection />
-              </option>
-              <option name="COLUMN_ORDER">
-                <list>
-                  <option value="0" />
-                  <option value="1" />
-                  <option value="2" />
-                  <option value="3" />
-                </list>
-              </option>
-            </State>
+            <State />
           </value>
         </entry>
       </map>
@@ -599,6 +403,7 @@
         </entry>
       </map>
     </option>
+    <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="prepare new data, more than two features tested, basic setup for ide" />
@@ -607,6 +412,32 @@
     <MESSAGE value="updates in data" />
     <MESSAGE value="updates" />
     <option name="LAST_COMMIT_MESSAGE" value="updates" />
+  </component>
+  <component name="WindowStateProjectService">
+    <state width="1877" height="284" key="GridCell.Tab.0.bottom" timestamp="1602342437847">
+      <screen x="1366" y="0" width="1920" height="1080" />
+    </state>
+    <state width="1877" height="284" key="GridCell.Tab.0.bottom/0.0.1366.768/1366.0.1920.1080@1366.0.1920.1080" timestamp="1602342437847" />
+    <state width="1323" height="284" key="GridCell.Tab.0.bottom/0.0.1366.768@0.0.1366.768" timestamp="1602279469834" />
+    <state width="1877" height="284" key="GridCell.Tab.0.center" timestamp="1602342437847">
+      <screen x="1366" y="0" width="1920" height="1080" />
+    </state>
+    <state width="1877" height="284" key="GridCell.Tab.0.center/0.0.1366.768/1366.0.1920.1080@1366.0.1920.1080" timestamp="1602342437847" />
+    <state width="1323" height="284" key="GridCell.Tab.0.center/0.0.1366.768@0.0.1366.768" timestamp="1602279469834" />
+    <state width="1877" height="284" key="GridCell.Tab.0.left" timestamp="1602342437846">
+      <screen x="1366" y="0" width="1920" height="1080" />
+    </state>
+    <state width="1877" height="284" key="GridCell.Tab.0.left/0.0.1366.768/1366.0.1920.1080@1366.0.1920.1080" timestamp="1602342437846" />
+    <state width="1323" height="284" key="GridCell.Tab.0.left/0.0.1366.768@0.0.1366.768" timestamp="1602279469834" />
+    <state width="1877" height="284" key="GridCell.Tab.0.right" timestamp="1602342437847">
+      <screen x="1366" y="0" width="1920" height="1080" />
+    </state>
+    <state width="1877" height="284" key="GridCell.Tab.0.right/0.0.1366.768/1366.0.1920.1080@1366.0.1920.1080" timestamp="1602342437847" />
+    <state width="1323" height="284" key="GridCell.Tab.0.right/0.0.1366.768@0.0.1366.768" timestamp="1602279469834" />
+    <state x="1589" y="240" width="672" height="678" key="search.everywhere.popup" timestamp="1602339537322">
+      <screen x="1366" y="0" width="1920" height="1080" />
+    </state>
+    <state x="1589" y="240" width="672" height="678" key="search.everywhere.popup/0.0.1366.768/1366.0.1920.1080@1366.0.1920.1080" timestamp="1602339537322" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -690,348 +521,30 @@
     </breakpoint-manager>
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
-    <SUITE FILE_PATH="coverage/bestwxpy$Main.coverage" NAME="Main Coverage Results" MODIFIED="1562758415087" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/test" />
-    <SUITE FILE_PATH="coverage/bestwxpy$panels.coverage" NAME="panels Coverage Results" MODIFIED="1563235536088" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/test" />
-    <SUITE FILE_PATH="coverage/bestwxpy$consol.coverage" NAME="consol Coverage Results" MODIFIED="1562508250496" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/test" />
-    <SUITE FILE_PATH="coverage/bestwxpy$auitest.coverage" NAME="auitest Coverage Results" MODIFIED="1562758247017" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/test" />
-    <SUITE FILE_PATH="coverage/bestwxpy$XLSGridDemo.coverage" NAME="XLSGridDemo Coverage Results" MODIFIED="1562846984471" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/test/xls" />
     <SUITE FILE_PATH="coverage/bestwxpy$MainFrame.coverage" NAME="MainFrame Coverage Results" MODIFIED="1562100019001" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/controller" />
-    <SUITE FILE_PATH="coverage/bestwxpy$auimanr.coverage" NAME="auimanr Coverage Results" MODIFIED="1562758218586" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/test" />
-    <SUITE FILE_PATH="coverage/bestwx$run.coverage" NAME="run Coverage Results" MODIFIED="1565897229764" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
-    <SUITE FILE_PATH="coverage/bestwx$logr_dt.coverage" NAME="logr_dt Coverage Results" MODIFIED="1566830281306" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/../thesis/random_mvdt" />
-    <SUITE FILE_PATH="coverage/bestwxpy$cal_pyw.coverage" NAME="cal.pyw Coverage Results" MODIFIED="1563137090565" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/test/xmldesing" />
-    <SUITE FILE_PATH="coverage/bestwxpy$gui.coverage" NAME="gui Coverage Results" MODIFIED="1562758331659" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/test" />
-    <SUITE FILE_PATH="coverage/bestwxpy$result_panels.coverage" NAME="result_panels Coverage Results" MODIFIED="1562700739362" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/test" />
-    <SUITE FILE_PATH="coverage/bestwxpy$run.coverage" NAME="run Coverage Results" MODIFIED="1563305326140" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
-    <SUITE FILE_PATH="coverage/bestwxpy$vhbox.coverage" NAME="vhbox Coverage Results" MODIFIED="1562721533791" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/test" />
-    <SUITE FILE_PATH="coverage/bestwxpy$text.coverage" NAME="text Coverage Results" MODIFIED="1562700762167" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/test" />
+    <SUITE FILE_PATH="coverage/bestwxpy$auitest.coverage" NAME="auitest Coverage Results" MODIFIED="1562758247017" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/test" />
     <SUITE FILE_PATH="coverage/bestwxpy$auigui.coverage" NAME="auigui Coverage Results" MODIFIED="1561998180039" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/test" />
-    <SUITE FILE_PATH="coverage/bestwxpy$aa.coverage" NAME="aa Coverage Results" MODIFIED="1562080791348" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/test" />
-    <SUITE FILE_PATH="coverage/bestwx$run__1_.coverage" NAME="run (1) Coverage Results" MODIFIED="1566421499833" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/../thesis/random_mvdt" />
-    <SUITE FILE_PATH="coverage/bestwxpy$aui.coverage" NAME="aui Coverage Results" MODIFIED="1562080770528" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/test" />
+    <SUITE FILE_PATH="coverage/bestwxpy$text.coverage" NAME="text Coverage Results" MODIFIED="1562700762167" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/test" />
     <SUITE FILE_PATH="coverage/bestwxpy$layout.coverage" NAME="layout Coverage Results" MODIFIED="1562758377027" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/test" />
-    <SUITE FILE_PATH="coverage/bestwxpy$mainapp.coverage" NAME="mainapp Coverage Results" MODIFIED="1562758433378" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/test" />
+    <SUITE FILE_PATH="coverage/bestwxpy$gui.coverage" NAME="gui Coverage Results" MODIFIED="1562758331659" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/test" />
+    <SUITE FILE_PATH="coverage/bestwx$auimanr.coverage" NAME="auimanr Coverage Results" MODIFIED="1602333169739" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/test" />
+    <SUITE FILE_PATH="coverage/bestwxpy$run.coverage" NAME="run Coverage Results" MODIFIED="1563305326140" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/bestwx$run.coverage" NAME="run Coverage Results" MODIFIED="1602341438221" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/bestwxpy$vhbox.coverage" NAME="vhbox Coverage Results" MODIFIED="1562721533791" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/test" />
+    <SUITE FILE_PATH="coverage/bestwxpy$consol.coverage" NAME="consol Coverage Results" MODIFIED="1562508250496" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/test" />
     <SUITE FILE_PATH="coverage/bestwxpy$sf.coverage" NAME="sf Coverage Results" MODIFIED="1562318270295" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/test" />
-    <SUITE FILE_PATH="coverage/bestwxpy$AUI_DockingWindowMgr.coverage" NAME="AUI_DockingWindowMgr Coverage Results" MODIFIED="1562111835129" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/test" />
+    <SUITE FILE_PATH="coverage/bestwxpy$XLSGridDemo.coverage" NAME="XLSGridDemo Coverage Results" MODIFIED="1562846984471" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/test/xls" />
+    <SUITE FILE_PATH="coverage/bestwx$logr_dt.coverage" NAME="logr_dt Coverage Results" MODIFIED="1566830281306" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/../thesis/random_mvdt" />
     <SUITE FILE_PATH="coverage/bestwxpy$gridbgsz.coverage" NAME="gridbgsz Coverage Results" MODIFIED="1562758355730" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/test" />
-  </component>
-  <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/controller/MainFrame.py" />
-    <entry file="file://$PROJECT_DIR$/controller/helper/__init__.py">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/static_files/images/logo.png" />
-    <entry file="file://$PROJECT_DIR$/event_execute/new_process/NewProcessPanel.py" />
-    <entry file="file://$PROJECT_DIR$/event_execute/__init__.py" />
-    <entry file="file://$PROJECT_DIR$/event_execute/main_frame/MainFrame.py" />
-    <entry file="file://$PROJECT_DIR$/view/main_frame/design.py" />
-    <entry file="file://$PROJECT_DIR$/view/main_frame/__init__.py">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/controller/__init__.py">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/controller/common_view/common_function.py">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/test/test_data/iris_training.csv" />
-    <entry file="file://$USER_HOME$/.PyCharm2019.1/system/python_stubs/833695225/wx/_core/__init__.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="207">
-          <caret line="755" selection-start-line="755" selection-end-line="755" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/controller/common_view/common_pandas_function.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="272">
-          <caret line="16" column="4" lean-forward="true" selection-start-line="16" selection-start-column="4" selection-end-line="16" selection-end-column="4" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$USER_HOME$/Anaconda3/envs/bestwxpy/Lib/site-packages/wx/lib/agw/aui/framemanager.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="120">
-          <caret line="1728" column="8" selection-start-line="1728" selection-start-column="8" selection-end-line="1728" selection-end-column="8" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/ml_lib/supervised.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="379">
-          <caret line="30" column="27" selection-start-line="30" selection-start-column="22" selection-end-line="30" selection-end-column="27" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$USER_HOME$/Anaconda3/envs/bestwxpy/Lib/site-packages/sklearn/linear_model/logistic.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="68">
-          <caret line="468" selection-start-line="468" selection-end-line="468" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$USER_HOME$/Anaconda3/envs/bestwxpy/Lib/site-packages/wx/lib/agw/aui/auibook.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="207">
-          <caret line="4289" column="8" selection-start-line="4289" selection-start-column="8" selection-end-line="4289" selection-end-column="8" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/view/__init__.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="68">
-          <caret line="4" selection-start-line="4" selection-end-line="4" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/controller/training/training.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="277">
-          <caret line="56" column="62" selection-start-line="56" selection-start-column="62" selection-end-line="56" selection-end-column="62" />
-          <folding>
-            <element signature="e#0#67#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/test/xmldesing/cal.pyw.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="289">
-          <caret line="17" column="8" selection-start-line="17" selection-start-column="8" selection-end-line="17" selection-end-column="8" />
-          <folding>
-            <element signature="e#28#37#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/test/xmldesing/cal.xrc">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="379">
-          <caret line="31" column="48" selection-start-line="31" selection-start-column="48" selection-end-line="31" selection-end-column="48" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/view/main.py">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/test/old desgin/old_main_frame_weblayout.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="397">
-          <caret line="46" column="30" lean-forward="true" selection-start-line="46" selection-start-column="30" selection-end-line="46" selection-end-column="30" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/view/common_view/common_file_dialog.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="311">
-          <caret line="22" column="36" lean-forward="true" selection-start-line="22" selection-start-column="36" selection-end-line="22" selection-end-column="36" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$USER_HOME$/.PyCharm2019.1/system/python_stubs/833695225/wx/_core/Window.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="207">
-          <caret line="941" column="8" selection-start-line="941" selection-start-column="8" selection-end-line="941" selection-end-column="8" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/test/panels.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="170">
-          <caret line="18" column="22" lean-forward="true" selection-start-line="18" selection-start-column="22" selection-end-line="18" selection-end-column="22" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/test/old desgin/old_insight_panel.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1003">
-          <caret line="31" column="19" lean-forward="true" selection-start-line="31" selection-start-column="19" selection-end-line="31" selection-end-column="19" />
-          <folding>
-            <element signature="e#24#52#0" expanded="true" />
-            <element signature="e#2175#3528#0" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$USER_HOME$/.PyCharm2019.1/system/python_stubs/833695225/wx/_core/Sizer.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="207">
-          <caret line="19" column="8" selection-start-line="19" selection-start-column="8" selection-end-line="19" selection-end-column="8" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/test/old desgin/old_result_panel.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="102">
-          <caret line="10" column="25" selection-start-line="10" selection-start-column="25" selection-end-line="10" selection-end-column="25" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/view/preprocess/preprocess.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="255">
-          <caret line="15" column="34" selection-start-line="15" selection-start-column="34" selection-end-line="15" selection-end-column="34" />
-          <folding>
-            <element signature="e#0#28#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/view/insight/insight_panel.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="283">
-          <caret line="154" column="31" lean-forward="true" selection-start-line="154" selection-start-column="31" selection-end-line="154" selection-end-column="31" />
-          <folding>
-            <element signature="e#24#52#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/view/common_view/common_gridview.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="119">
-          <caret line="7" column="8" selection-start-line="7" selection-start-column="8" selection-end-line="7" selection-end-column="8" />
-          <folding>
-            <element signature="e#0#9#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/view/new_process/new_process_panel.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="470">
-          <caret line="72" lean-forward="true" selection-start-line="72" selection-end-line="72" />
-          <folding>
-            <element signature="e#0#9#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/view/main_frame/main_frame.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="399">
-          <caret line="202" column="37" selection-start-line="202" selection-start-column="37" selection-end-line="202" selection-end-column="37" />
-          <folding>
-            <element signature="e#15#24#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$USER_HOME$/Anaconda3/envs/thesis/Lib/random.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="106">
-          <caret line="257" selection-start-line="257" selection-end-line="257" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/../thesis/random_mvdt/data_viz.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="218">
-          <caret line="27" column="34" selection-start-line="27" selection-start-column="34" selection-end-line="27" selection-end-column="34" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$USER_HOME$/Anaconda3/envs/thesis/Lib/site-packages/numpy/core/numeric.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="79">
-          <caret line="590" selection-start-line="590" selection-end-line="590" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$USER_HOME$/Anaconda3/envs/thesis/Lib/site-packages/numpy/lib/function_base.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="191">
-          <caret line="2348" column="14" selection-start-line="2348" selection-start-column="8" selection-end-line="2348" selection-end-column="14" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/../thesis/random_mvdt/data_prepare.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="226">
-          <caret line="18" column="4" selection-start-line="18" selection-start-column="4" selection-end-line="18" selection-end-column="4" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/test/test_data/logo.jpg" />
-    <entry file="file://$PROJECT_DIR$/view/training/load_data.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="323">
-          <caret line="22" selection-start-line="22" selection-end-line="22" />
-          <folding>
-            <element signature="e#0#9#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/view/training/training_panel.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="17">
-          <caret line="114" selection-start-line="114" selection-end-line="114" />
-          <folding>
-            <element signature="e#0#9#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/../thesis/random_mvdt/run.ipynb">
-      <provider selected="true" editor-type-id="jupyter-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/run.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="85">
-          <caret line="5" selection-start-line="5" selection-end-line="5" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$USER_HOME$/Anaconda3/envs/thesis/Lib/site-packages/sklearn/linear_model/logistic.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="191">
-          <caret line="1566" column="25" selection-start-line="1566" selection-start-column="25" selection-end-line="1566" selection-end-column="25" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/../thesis/random_mvdt/run.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1836">
-          <caret line="117" column="29" selection-start-line="117" selection-start-column="29" selection-end-line="117" selection-end-column="29" />
-          <folding>
-            <element signature="e#0#19#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/../thesis/random_mvdt/data_split.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="566">
-          <caret line="89" selection-start-line="89" selection-end-line="89" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/../thesis/random_mvdt/prediction.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="374">
-          <caret line="24" selection-start-line="24" selection-end-line="24" />
-          <folding>
-            <element signature="e#0#18#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/../thesis/random_mvdt/logr_dt.ipynb">
-      <provider selected="true" editor-type-id="jupyter-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/../thesis/random_mvdt/decision-tree-from-scratch-not-sklearn.ipynb">
-      <provider selected="true" editor-type-id="jupyter-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/../thesis/random_mvdt/logr_dt.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="566">
-          <caret line="118" column="37" selection-start-line="118" selection-start-column="29" selection-end-line="118" selection-end-column="37" />
-          <folding>
-            <element signature="e#0#19#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
+    <SUITE FILE_PATH="coverage/bestwxpy$AUI_DockingWindowMgr.coverage" NAME="AUI_DockingWindowMgr Coverage Results" MODIFIED="1562111835129" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/test" />
+    <SUITE FILE_PATH="coverage/bestwx$run__1_.coverage" NAME="run (1) Coverage Results" MODIFIED="1566421499833" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/../thesis/random_mvdt" />
+    <SUITE FILE_PATH="coverage/bestwxpy$result_panels.coverage" NAME="result_panels Coverage Results" MODIFIED="1562700739362" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/test" />
+    <SUITE FILE_PATH="coverage/bestwxpy$aui.coverage" NAME="aui Coverage Results" MODIFIED="1562080770528" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/test" />
+    <SUITE FILE_PATH="coverage/bestwxpy$auimanr.coverage" NAME="auimanr Coverage Results" MODIFIED="1562758218586" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/test" />
+    <SUITE FILE_PATH="coverage/bestwxpy$Main.coverage" NAME="Main Coverage Results" MODIFIED="1562758415087" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/test" />
+    <SUITE FILE_PATH="coverage/bestwxpy$mainapp.coverage" NAME="mainapp Coverage Results" MODIFIED="1562758433378" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/test" />
+    <SUITE FILE_PATH="coverage/bestwxpy$aa.coverage" NAME="aa Coverage Results" MODIFIED="1562080791348" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/test" />
+    <SUITE FILE_PATH="coverage/bestwxpy$panels.coverage" NAME="panels Coverage Results" MODIFIED="1563235536088" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/test" />
+    <SUITE FILE_PATH="coverage/bestwxpy$cal_pyw.coverage" NAME="cal.pyw Coverage Results" MODIFIED="1563137090565" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/test/xmldesing" />
   </component>
 </project>

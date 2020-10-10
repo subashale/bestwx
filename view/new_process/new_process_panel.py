@@ -17,8 +17,8 @@ class NewProcessPanel(wx.Panel):
         """Constructor"""
         wx.Panel.__init__(self, parent=parent)
         self.parent = parent
-
         self.panel_design()
+        self.pageDict = {}
 
     def panel_design(self):
         # create notebook
@@ -77,7 +77,26 @@ class NewProcessPanel(wx.Panel):
 
         self.nb_process.AddPage(grid.grid_generate(dataframe_list), getFileName, wx.ALL | wx.EXPAND)
 
+    def a(self): return 2
+
+    def working_area(self, dataFrame, objDataHistory):
+        #
+        # no use
+        # for i, j in self.pageDict.items():
+        #     print(i, j)
+        #
+        # if objDataHistory.getData()[1] in self.pageDict:
+        #     print(self.pageDict[objDataHistory.getData()[1]], type(self.pageDict[objDataHistory.getData()[1]]))
+        #     # self.nb_process.EnableTab(2, True)
+        #     # self.nb_process.AdvanceSelection(forward=False)
+        #
+        # else:
+        #     self.grid_design_huge(dataframe_list=dataFrame, getFileName=objDataHistory.getData()[1])
+        #     self.pageDict[objDataHistory.getData()[1]] = self.nb_process.GetPageCount()
+
+        self.grid_design_huge(dataframe_list=dataFrame, getFileName=objDataHistory.getData()[1])
     # for huge data
+
     def grid_design_huge(self, dataframe_list, getFileName):
         # it will take grid object from CommonPanelView and send to grid
         # send grid to processs pane; notebook object and data frame list and name
@@ -86,4 +105,4 @@ class NewProcessPanel(wx.Panel):
 
         #huge
         grid = Test(self, self.nb_process)
-        self.nb_process.AddPage(grid.grid_generate(dataframe_list), getFileName, wx.ALL | wx.EXPAND)
+        self.nb_process.AddPage(grid.grid_generate(dataframe_list.head(100)), getFileName, wx.ALL | wx.EXPAND)

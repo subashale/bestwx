@@ -30,6 +30,7 @@ class Main_Frame(wx.Frame):
         super(Main_Frame, self).__init__(*args, **kw)
         self.menu_bar_design()
         self.aui_panes_design()
+
         self.Centre()
         self.Show()
         self.Fit()
@@ -117,7 +118,7 @@ class Main_Frame(wx.Frame):
 
         self.tree = wx.TreeCtrl(self.recent_activities_panel, -1, wx.Point(0, 0), wx.Size(wx.EXPAND, wx.EXPAND),
                            wx.TR_DEFAULT_STYLE | wx.NO_BORDER)
-        self.tree.Bind(wx.EVT_TREE_SEL_CHANGED, self.OnItemSelected)
+        self.tree.Bind(wx.EVT_TREE_ITEM_ACTIVATED, self.OnItemSelected)
 
         self.root = self.tree.AddRoot("Repository")
         self.items_tree_recent = []
@@ -140,14 +141,18 @@ class Main_Frame(wx.Frame):
 
     # tree event handler
     def OnItemSelected(self, event):
-        #self.item = event.GetItem()
-        items = self.tree.GetSelections()
-        print(items)
-        #print(map(self.tree.GetItemText, items))
+        print(self.tree.GetItemText(event.GetItem()))
+        dataObj = self.tree.GetItemData(event.GetItem())
+        if hasattr(dataObj, 'getData'):
+            self.showData(dataObj)
+
 
     # after opening data set also update here for recent active dataset
-    def recent_tree_active_data(self, getFileName):
-        self.tree.AppendItem(self.items_tree_recent[0], getFileName)
+    def recent_tree_active_data(self, dataObj):
+        self.tree.AppendItem(self.items_tree_recent[0], text=dataObj.getData()[1], data=dataObj)
+        self.tree.Expand(self.items_tree_recent[0])
+
+
 
     # after closing dataset form both side or exit of app also update for history;
     # we can make a log file and from there we can update this tree
@@ -155,7 +160,6 @@ class Main_Frame(wx.Frame):
     def recent_tree_history_data(self):
 
         pass
-
 
     # we can make a log file and from there we can update this tree
     def recent_tree_today_data(self):
@@ -175,8 +179,9 @@ class Main_Frame(wx.Frame):
 
     # for insight working area
     def working_area_result(self):
-        self.obj_Result = InsightPanel(self)
-        return self.obj_Result
+        self.obj_insight = InsightPanel(self)
+
+        return self.obj_insight
 
     # for preprocess working area
     def working_area_preprocess(self):
@@ -191,23 +196,27 @@ class Main_Frame(wx.Frame):
     # file dialog click handler
     def on_clicked_open_data(self, event):
 
+        fileLocation, fileName = ofd()
+        obj_dataHistory = DataHistory(fileLocation, fileName)
+        self.showData(obj_dataHistory)
+        self.recent_tree_active_data(obj_dataHistory)
 
-        getFileLocation, getFileName = ofd()
-
+    def showData(self, obj_dataHistory):
         # find separator of data, for optional argument, tsv data;#
+        # also update in recent active data
 
-        dataframe = common_pandas_function.read_data(getFileLocation)
-
+        dataframe = common_pandas_function.read_data(obj_dataHistory.getData()[0])
 
         # for new process pane
-        #self.obj_NewProcess.grid_design(dataframe, getFileName)
-        self.obj_NewProcess.grid_design_huge(dataframe, getFileName)
+        # self.obj_NewProcess.grid_design(dataframe, fileName)
+        self.obj_NewProcess.working_area(dataframe, obj_dataHistory)
+        # mainInsight(self, dataframe, fileName)
 
         # direct to open also in insight pane as tab, for now only show tab from file name
-        self.obj_Result.working_area(dataframe, getFileName)
 
-        # also update in recent active data
-        self.recent_tree_active_data(getFileName)
+        self.obj_insight.working_area(dataframe, obj_dataHistory)
+
+        # self.obj_Training.recent_data(obj_dataHistory)
 
     # action when new process button is clicked, it will show process_pane
     def onClickNewProcess(self, event):
@@ -223,6 +232,7 @@ class Main_Frame(wx.Frame):
         if self.obj_NewProcess.nb_process.GetPageCount() == 0:
             self.obj_NewProcess.default_tab()
 
+        self.Layout()
     # action when insight button is clicked, it will show result_pane
     def onInsightClicked(self, event):
 
@@ -237,9 +247,10 @@ class Main_Frame(wx.Frame):
         self.mgr.GetPaneByName("insight_pane").Show()
         self.mgr.Update()
 
-        if self.obj_Result.nb_result.GetPageCount() == 0:
-            self.obj_Result.default_tab()
+        if self.obj_insight.nb_result.GetPageCount() == 0:
+            self.obj_insight.default_tab()
 
+        self.Layout()
     # action when pre processing button is clicked, it will show pre processing pane
     # able to do basic preprocessing, feature extraction, statistical visualization;#
     def onPreProcessingClicked(self, event):
@@ -255,7 +266,6 @@ class Main_Frame(wx.Frame):
 
     # action when training button is clicked, it will show train_pane
     def onTrainingClicked(self, event):
-
         # hide every other panel except its own.
         self.mgr.GetPaneByName("process_pane").Hide()
         self.mgr.GetPaneByName("insight_pane").Hide()
@@ -266,3 +276,16 @@ class Main_Frame(wx.Frame):
 
         if self.obj_Training.nb_training.GetPageCount() == 0:
             self.obj_Training.main_area()
+
+
+class DataHistory:
+    def __init__(self, fileLocation, fileName):
+        self.fileLocation = fileLocation
+        self.fileName = fileName
+
+
+    def getData(self):
+        return self.fileLocation, self.fileName
+
+
+
