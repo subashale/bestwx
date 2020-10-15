@@ -3,7 +3,7 @@ from ml_lib.supervised import import_lib
 from sklearn.model_selection import train_test_split
 from sklearn.metrics import confusion_matrix
 from sklearn.metrics import classification_report
-
+import numpy as np
 # tasks
 # reading dataset as df
 # finding label and features
@@ -19,32 +19,44 @@ class Training:
         pass
 
     # for holding given object and reading data
-    def read_hold(self, fileLocation, task):
+    def read_hold(self, processInfo):
         # holding task obj in self
-        self.task = task
+        self.processInfo = processInfo
 
+        print(processInfo.getTask())
         # reading data
-        self.data_frame = read_data(fileLocation)
+        # self.data_frame = dataFrame
 
         self.call_for_sklearn()
     # importing particular selected library only
     def call_for_sklearn(self):
 
-        self.models = import_lib(self.task["model"])
+        self.models = import_lib(self.processInfo.getAlgos())
 
         self.find_label_feature()
 
     def find_label_feature(self):
-        if self.task["select_input"] == "all":
-            self.all_inputs = self.data_frame[['SepalLengthCm', 'SepalWidthCm', 'PetalLengthCm', 'PetalWidthCm']].values
+        # if self.processInfo["select_input"] == "all":
+        #     self.all_inputs = self.data_frame[['SepalLengthCm', 'SepalWidthCm', 'PetalLengthCm', 'PetalWidthCm']].values
 
-        self.all_classes = self.data_frame[self.task["label"]].values
+        # self.all_classes = self.data_frame[self.processInfo["label"]].values
+        index = self.processInfo.getHeaders()
+        outputValue = self.processInfo.getOutputFeature()
+        # output must be inside headers
+        if outputValue not in self.processInfo.getHeaders():
+            return False
+        outputIdx = self.processInfo.getHeaders().index(outputValue)
 
-        self.data_separate()
+        data = np.array(self.processInfo.getRows())
+
+        input = np.delete(data, [outputIdx], 1)
+        output = data[:, outputIdx]
+
+        self.data_separate(input, output)
 
     # separate data for train and test
-    def data_separate(self):
-        (train_inputs, test_inputs, train_classes, test_classes) = train_test_split(self.all_inputs, self.all_classes,
+    def data_separate(self, input, output):
+        (train_inputs, test_inputs, train_classes, test_classes) = train_test_split(input, output,
                                                                                     train_size=0.7, random_state=1)
         self.fit(train_inputs, test_inputs, train_classes, test_classes)
 

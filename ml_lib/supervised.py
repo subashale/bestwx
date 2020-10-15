@@ -19,13 +19,13 @@ def import_lib(models):
         # check before importing its root model and create obj
 
         # tree_model
-        if model == "DecisionTreeClassifier":
+        if model == "Decision Tree":
             from sklearn.tree import DecisionTreeClassifier as dt
             dt_model = dt()
             model_obj[model] = dt_model
 
         # linar model
-        elif model == "LogisticRegression":
+        elif model == "Logistic Regression":
             from sklearn.linear_model import LogisticRegression as lr
             lr_model = lr()
             model_obj[model] = lr_model

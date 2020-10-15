@@ -63,16 +63,16 @@ class Main_Frame(wx.Frame):
         # desing of each panes
 
         self.mgr.AddPane(self.toolbar_buttons(), aui.AuiPaneInfo().CaptionVisible(False).Name("toolbar_pane").MinSize(0, 30).Fixed().Top().CloseButton(False))
-        self.mgr.AddPane(self.recent_activities(),
-                         aui.AuiPaneInfo().Name("recent_pane").BestSize(180, 0).MinSize(180, 0).Left().Caption("Recent activities").CloseButton(False).MinimizeButton(True))
-        #self._center_panel = aui.AuiPaneInfo().CenterPane().CloseButton(False).MinimizeButton(True)
-        self.mgr.AddPane(self.working_area_process(),
-                         aui.AuiPaneInfo().Name("process_pane").CenterPane().CloseButton(False).MinimizeButton(True))
-        self.mgr.AddPane(self.working_area_result(),
-                         aui.AuiPaneInfo().Name("insight_pane").CenterPane().CloseButton(False).MinimizeButton(True).Hide())
-        self.mgr.AddPane(self.working_area_preprocess(),
-                         aui.AuiPaneInfo().Name("preprocess_pane").CenterPane().CloseButton(False).MinimizeButton(
-                             True).Hide())
+        # self.mgr.AddPane(self.recent_activities(),
+        #                  aui.AuiPaneInfo().Name("recent_pane").BestSize(180, 0).MinSize(180, 0).Left().Caption("Recent activities").CloseButton(False).MinimizeButton(True))
+        # #self._center_panel = aui.AuiPaneInfo().CenterPane().CloseButton(False).MinimizeButton(True)
+        # self.mgr.AddPane(self.working_area_process(),
+        #                  aui.AuiPaneInfo().Name("process_pane").CenterPane().CloseButton(False).MinimizeButton(True))
+        # self.mgr.AddPane(self.working_area_result(),
+        #                  aui.AuiPaneInfo().Name("insight_pane").CenterPane().CloseButton(False).MinimizeButton(True).Hide())
+        # self.mgr.AddPane(self.working_area_preprocess(),
+        #                  aui.AuiPaneInfo().Name("preprocess_pane").CenterPane().CloseButton(False).MinimizeButton(
+        #                      True).Hide())
         self.mgr.AddPane(self.working_area_training(),
                          aui.AuiPaneInfo().Name("training_pane").CenterPane().CloseButton(False).MinimizeButton(
                              True).Hide())
