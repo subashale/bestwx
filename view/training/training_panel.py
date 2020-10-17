@@ -10,7 +10,7 @@ from view.common_view.common_file_dialog import open_file_dialog as ofd
 from controller.training.training import Training
 
 # loading its child views
-from view.common_view.common_gridview import Test
+from view.common_view.common_gridview import Test, MegaGrid
 from view.training.load_data import LoadData
 
 class TrainingPanel(wx.Panel):
@@ -243,6 +243,7 @@ class selectTask(wx.Panel):
     def desingPanel(self):
         pass
 
+
 # Every new panel opeartion
 class showData(wx.Panel):
 
@@ -436,23 +437,18 @@ class showData(wx.Panel):
 
         return columsData, rowsData
 
-    def grid_generate(self, new_demo, data_frame):
-        import wx.grid as gridlib
+    def girdData(self, dataframe):
+        columns = dataframe.columns.values.tolist()
+        rows = dataframe.values.tolist()
+        data = []
+        for i in range(len(rows)):
+            d = {}
+            for row, col in zip(rows[i], columns):
+        #         print(col, row)
+                d[col] = row
+            data.append((str(i), d))
 
-        column = tuple(data_frame.columns.values)
-        data = data_frame.to_records(index=False)
-        grid = gridlib.Grid(new_demo)
-
-        grid.CreateGrid(len(data), len(column))
-
-        for index, value in enumerate(column):
-            grid.SetColLabelValue(index, str(value))
-
-        for row, j in enumerate(data):
-            for col, value in enumerate(j):
-                grid.SetCellValue(row, col, str(value))
-
-        return grid
+        return data, columns
 
     def grid_design_huge(self, dataFrame):
         self.panel.Show()
@@ -467,52 +463,25 @@ class showData(wx.Panel):
         self.InfoPnl = wx.Panel(self.panel, wx.ID_ANY)
         self.main_sz.Add(self.InfoPnl, 1, wx.EXPAND, 0)
 
-        self.grid_1 = self.grid_generate(self.dataGridPanl, self.dataFrame)
 
-        # print("gridsize", self.grid_1.GetRowSizes(), self.grid_1.GetColSizes())
+        # huge data grid with additional properties
+        data, columns = self.girdData(dataFrame)
+        self.grid_1 = MegaGrid(self.dataGridPanl, data, columns)
+        # self.grid_1.Reset()
+
+        # simple huge data grid
+        # grid = Test(self, self.dataGridPanl)
+        # self.grid_1 = grid.grid_generate(self.dataFrame)
 
         self.leftGridsz.Add(self.grid_1, 1, wx.EXPAND, 0)
         self.inputOutputDesing(self.dataFrame)
 
-        self.grid_1.AutoSize()
-
-
+        # self.grid_1.AutoSize()
         self.panel.Layout()
-
-        # main_sz = wx.BoxSizer(wx.VERTICAL)
-        # load_data_panel = wx.Panel(self.panel,
-        #          size=(400),
-        #          pos=(200, 0),
-        #          style=wx.BORDER)
-        # load_data_panel.SetBackgroundColour(wx.RED)
-        # load_Information_Panel = wx.Panel(self.panel,
-        #                      size=(200),
-        #                      pos=(400,0),
-        #                      style=wx.BORDER)
-        # load_Information_Panel.SetBackgroundColour(wx.GREEN)
-        #
-        # leftDatagrid = wx.BoxSizer(wx.VERTICAL)
-        # rightTaskSelect = wx.BoxSizer(wx.VERTICAL)
-        # # name = wx.StaticText(load_data_panel, 0, "intro text")
-        # name = wx.StaticText(load_Information_Panel, 0, "Information")
-        # self.gridData = self.grid_generate(load_data_panel, dataframe_list.head(100))
-        #
-        # # name.SetLabel("New name")
-        #
-        # # vbox.Add(name, 0, wx.ALIGN_CENTER | wx.LEFT | wx.TOP, 10)
-        # leftDatagrid.Add(self.gridData, 0, wx.ALL | wx.EXPAND | wx.LEFT | wx.TOP, 10)
-        # self.gridData.AutoSize()
-        #
-        # load_data_panel.SetSizer(leftDatagrid)
-        #
-        # rightTaskSelect.Add(rightTaskSelect, 0, wx.ALIGN_CENTER_VERTICAL)
-        # load_Information_Panel.SetSizer(rightTaskSelect)
-        #
-        # main_sz.Add(load_data_panel, 0, wx.ALL)
-        #
-        # main_sz.Layout()
-        # self.panel.SetSizer(main_sz)
         return self.panel
+
+
+
 
 
 

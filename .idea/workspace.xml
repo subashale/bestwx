@@ -1,17 +1,28 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="BranchesTreeState">
+    <expand>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="LOCAL_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="GROUP_NODE:origin" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+    </expand>
+    <select />
+  </component>
   <component name="ChangeListManager">
-    <list default="true" id="c8cb2d60-5af8-4251-bd08-24f7c9a3a1ec" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/bestwxpy.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/bestwxpy.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+    <list default="true" id="c8cb2d60-5af8-4251-bd08-24f7c9a3a1ec" name="Default Changelist" comment="training panel gui working">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/controller/common_view/common_pandas_function.py" beforeDir="false" afterPath="$PROJECT_DIR$/controller/common_view/common_pandas_function.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/run/run.exe" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/auimanr.py" beforeDir="false" afterPath="$PROJECT_DIR$/test/auimanr.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/view/common_view/common_file_dialog.py" beforeDir="false" afterPath="$PROJECT_DIR$/view/common_view/common_file_dialog.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/view/common_view/common_gridview.py" beforeDir="false" afterPath="$PROJECT_DIR$/view/common_view/common_gridview.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/view/insight/insight_panel.py" beforeDir="false" afterPath="$PROJECT_DIR$/view/insight/insight_panel.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/view/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/view/main.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/view/main_frame/main_frame.py" beforeDir="false" afterPath="$PROJECT_DIR$/view/main_frame/main_frame.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/view/new_process/new_process_panel.py" beforeDir="false" afterPath="$PROJECT_DIR$/view/new_process/new_process_panel.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/view/training/training_panel.py" beforeDir="false" afterPath="$PROJECT_DIR$/view/training/training_panel.py" afterDir="false" />
@@ -103,7 +114,7 @@
     </key>
   </component>
   <component name="RunManager" selected="Python.run">
-    <configuration name="auimanr" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+    <configuration name="dynamic" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="bestwxpy" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -116,7 +127,7 @@
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/test/auimanr.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/test/dynamic.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -125,29 +136,7 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
-    <configuration name="logr_dt" type="PythonConfigurationType" factoryName="Python" temporary="true">
-      <module name="random_mvdt" />
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/../thesis/random_mvdt" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/../thesis/random_mvdt/logr_dt.py" />
-      <option name="PARAMETERS" value="" />
-      <option name="SHOW_COMMAND_LINE" value="false" />
-      <option name="EMULATE_TERMINAL" value="false" />
-      <option name="MODULE_MODE" value="false" />
-      <option name="REDIRECT_INPUT" value="false" />
-      <option name="INPUT_FILE" value="" />
-      <method v="2" />
-    </configuration>
-    <configuration name="panels" type="PythonConfigurationType" factoryName="Python" temporary="true">
+    <configuration name="gridupdate" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="bestwxpy" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -160,7 +149,7 @@
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/test/panels.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/test/gridupdate.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -169,20 +158,42 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
-    <configuration name="run (1)" type="PythonConfigurationType" factoryName="Python" temporary="true">
-      <module name="random_mvdt" />
+    <configuration name="panelscorll" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="bestwxpy" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
       <envs>
         <env name="PYTHONUNBUFFERED" value="1" />
       </envs>
       <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/../thesis/random_mvdt" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/test" />
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/../thesis/random_mvdt/run.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/test/panelscorll.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="pygirdtabsebase" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="bestwxpy" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/test" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/test/pygirdtabsebase.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -216,10 +227,10 @@
     <recent_temporary>
       <list>
         <item itemvalue="Python.run" />
-        <item itemvalue="Python.auimanr" />
-        <item itemvalue="Python.logr_dt" />
-        <item itemvalue="Python.run (1)" />
-        <item itemvalue="Python.panels" />
+        <item itemvalue="Python.pygirdtabsebase" />
+        <item itemvalue="Python.panelscorll" />
+        <item itemvalue="Python.dynamic" />
+        <item itemvalue="Python.gridupdate" />
       </list>
     </recent_temporary>
   </component>
@@ -300,6 +311,13 @@
       <workItem from="1602186749233" duration="5771000" />
       <workItem from="1602270966095" duration="4517000" />
       <workItem from="1602318032568" duration="24282000" />
+      <workItem from="1602344029714" duration="802000" />
+      <workItem from="1602667553086" duration="26211000" />
+      <workItem from="1602755288038" duration="18540000" />
+      <workItem from="1602797476973" duration="4676000" />
+      <workItem from="1602849657342" duration="6900000" />
+      <workItem from="1602879489861" duration="2729000" />
+      <workItem from="1602936431118" duration="2671000" />
     </task>
     <task id="LOCAL-00001" summary="prepare new data, more than two features tested, basic setup for ide">
       <created>1565984825676</created>
@@ -364,7 +382,21 @@
       <option name="project" value="LOCAL" />
       <updated>1566595427664</updated>
     </task>
-    <option name="localTasksCounter" value="10" />
+    <task id="LOCAL-00010" summary="insight_panel.py multip page support, grid filter">
+      <created>1602344288368</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1602344288368</updated>
+    </task>
+    <task id="LOCAL-00011" summary="training panel gui working">
+      <created>1602793665292</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1602793665292</updated>
+    </task>
+    <option name="localTasksCounter" value="12" />
     <servers />
   </component>
   <component name="TodoView">
@@ -411,33 +443,60 @@
     <MESSAGE value="recursive split is defined" />
     <MESSAGE value="updates in data" />
     <MESSAGE value="updates" />
-    <option name="LAST_COMMIT_MESSAGE" value="updates" />
+    <MESSAGE value="insight_panel.py multip page support, grid filter" />
+    <MESSAGE value="training panel gui working" />
+    <option name="LAST_COMMIT_MESSAGE" value="training panel gui working" />
   </component>
   <component name="WindowStateProjectService">
-    <state width="1877" height="284" key="GridCell.Tab.0.bottom" timestamp="1602342437847">
+    <state width="1323" height="260" key="GridCell.Tab.0.bottom" timestamp="1602882250798">
+      <screen x="0" y="0" width="1366" height="768" />
+    </state>
+    <state width="1323" height="284" key="GridCell.Tab.0.bottom/0.0.1366.768/1366.0.1920.1080@0.0.1366.768" timestamp="1602703277374" />
+    <state width="1877" height="284" key="GridCell.Tab.0.bottom/0.0.1366.768/1366.0.1920.1080@1366.0.1920.1080" timestamp="1602679240435" />
+    <state width="1323" height="260" key="GridCell.Tab.0.bottom/0.0.1366.768@0.0.1366.768" timestamp="1602882250798" />
+    <state width="1323" height="260" key="GridCell.Tab.0.center" timestamp="1602882250798">
+      <screen x="0" y="0" width="1366" height="768" />
+    </state>
+    <state width="1323" height="284" key="GridCell.Tab.0.center/0.0.1366.768/1366.0.1920.1080@0.0.1366.768" timestamp="1602703277374" />
+    <state width="1877" height="284" key="GridCell.Tab.0.center/0.0.1366.768/1366.0.1920.1080@1366.0.1920.1080" timestamp="1602679240435" />
+    <state width="1323" height="260" key="GridCell.Tab.0.center/0.0.1366.768@0.0.1366.768" timestamp="1602882250798" />
+    <state width="1323" height="260" key="GridCell.Tab.0.left" timestamp="1602882250798">
+      <screen x="0" y="0" width="1366" height="768" />
+    </state>
+    <state width="1323" height="284" key="GridCell.Tab.0.left/0.0.1366.768/1366.0.1920.1080@0.0.1366.768" timestamp="1602703277374" />
+    <state width="1877" height="284" key="GridCell.Tab.0.left/0.0.1366.768/1366.0.1920.1080@1366.0.1920.1080" timestamp="1602679240434" />
+    <state width="1323" height="260" key="GridCell.Tab.0.left/0.0.1366.768@0.0.1366.768" timestamp="1602882250798" />
+    <state width="1323" height="260" key="GridCell.Tab.0.right" timestamp="1602882250798">
+      <screen x="0" y="0" width="1366" height="768" />
+    </state>
+    <state width="1323" height="284" key="GridCell.Tab.0.right/0.0.1366.768/1366.0.1920.1080@0.0.1366.768" timestamp="1602703277374" />
+    <state width="1877" height="284" key="GridCell.Tab.0.right/0.0.1366.768/1366.0.1920.1080@1366.0.1920.1080" timestamp="1602679240435" />
+    <state width="1323" height="260" key="GridCell.Tab.0.right/0.0.1366.768@0.0.1366.768" timestamp="1602882250798" />
+    <state width="1323" height="283" key="GridCell.Tab.1.bottom" timestamp="1602718078518">
+      <screen x="0" y="0" width="1366" height="768" />
+    </state>
+    <state width="1323" height="283" key="GridCell.Tab.1.bottom/0.0.1366.768@0.0.1366.768" timestamp="1602718078518" />
+    <state width="1323" height="283" key="GridCell.Tab.1.center" timestamp="1602718078518">
+      <screen x="0" y="0" width="1366" height="768" />
+    </state>
+    <state width="1323" height="283" key="GridCell.Tab.1.center/0.0.1366.768@0.0.1366.768" timestamp="1602718078518" />
+    <state width="1323" height="283" key="GridCell.Tab.1.left" timestamp="1602718078518">
+      <screen x="0" y="0" width="1366" height="768" />
+    </state>
+    <state width="1323" height="283" key="GridCell.Tab.1.left/0.0.1366.768@0.0.1366.768" timestamp="1602718078518" />
+    <state width="1323" height="283" key="GridCell.Tab.1.right" timestamp="1602718078518">
+      <screen x="0" y="0" width="1366" height="768" />
+    </state>
+    <state width="1323" height="283" key="GridCell.Tab.1.right/0.0.1366.768@0.0.1366.768" timestamp="1602718078518" />
+    <state x="393" y="196" key="Vcs.Push.Dialog.v2" timestamp="1602793669542">
+      <screen x="0" y="0" width="1366" height="768" />
+    </state>
+    <state x="1918" y="275" key="Vcs.Push.Dialog.v2/0.0.1366.768/1366.0.1920.1080@1366.0.1920.1080" timestamp="1602344298232" />
+    <state x="393" y="196" key="Vcs.Push.Dialog.v2/0.0.1366.768@0.0.1366.768" timestamp="1602793669542" />
+    <state x="1589" y="240" width="672" height="678" key="search.everywhere.popup" timestamp="1602344643606">
       <screen x="1366" y="0" width="1920" height="1080" />
     </state>
-    <state width="1877" height="284" key="GridCell.Tab.0.bottom/0.0.1366.768/1366.0.1920.1080@1366.0.1920.1080" timestamp="1602342437847" />
-    <state width="1323" height="284" key="GridCell.Tab.0.bottom/0.0.1366.768@0.0.1366.768" timestamp="1602279469834" />
-    <state width="1877" height="284" key="GridCell.Tab.0.center" timestamp="1602342437847">
-      <screen x="1366" y="0" width="1920" height="1080" />
-    </state>
-    <state width="1877" height="284" key="GridCell.Tab.0.center/0.0.1366.768/1366.0.1920.1080@1366.0.1920.1080" timestamp="1602342437847" />
-    <state width="1323" height="284" key="GridCell.Tab.0.center/0.0.1366.768@0.0.1366.768" timestamp="1602279469834" />
-    <state width="1877" height="284" key="GridCell.Tab.0.left" timestamp="1602342437846">
-      <screen x="1366" y="0" width="1920" height="1080" />
-    </state>
-    <state width="1877" height="284" key="GridCell.Tab.0.left/0.0.1366.768/1366.0.1920.1080@1366.0.1920.1080" timestamp="1602342437846" />
-    <state width="1323" height="284" key="GridCell.Tab.0.left/0.0.1366.768@0.0.1366.768" timestamp="1602279469834" />
-    <state width="1877" height="284" key="GridCell.Tab.0.right" timestamp="1602342437847">
-      <screen x="1366" y="0" width="1920" height="1080" />
-    </state>
-    <state width="1877" height="284" key="GridCell.Tab.0.right/0.0.1366.768/1366.0.1920.1080@1366.0.1920.1080" timestamp="1602342437847" />
-    <state width="1323" height="284" key="GridCell.Tab.0.right/0.0.1366.768@0.0.1366.768" timestamp="1602279469834" />
-    <state x="1589" y="240" width="672" height="678" key="search.everywhere.popup" timestamp="1602339537322">
-      <screen x="1366" y="0" width="1920" height="1080" />
-    </state>
-    <state x="1589" y="240" width="672" height="678" key="search.everywhere.popup/0.0.1366.768/1366.0.1920.1080@1366.0.1920.1080" timestamp="1602339537322" />
+    <state x="1589" y="240" width="672" height="678" key="search.everywhere.popup/0.0.1366.768/1366.0.1920.1080@1366.0.1920.1080" timestamp="1602344643606" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -526,10 +585,11 @@
     <SUITE FILE_PATH="coverage/bestwxpy$auigui.coverage" NAME="auigui Coverage Results" MODIFIED="1561998180039" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/test" />
     <SUITE FILE_PATH="coverage/bestwxpy$text.coverage" NAME="text Coverage Results" MODIFIED="1562700762167" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/test" />
     <SUITE FILE_PATH="coverage/bestwxpy$layout.coverage" NAME="layout Coverage Results" MODIFIED="1562758377027" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/test" />
+    <SUITE FILE_PATH="coverage/bestwx$dynamic.coverage" NAME="dynamic Coverage Results" MODIFIED="1602713166618" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/test" />
     <SUITE FILE_PATH="coverage/bestwxpy$gui.coverage" NAME="gui Coverage Results" MODIFIED="1562758331659" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/test" />
     <SUITE FILE_PATH="coverage/bestwx$auimanr.coverage" NAME="auimanr Coverage Results" MODIFIED="1602333169739" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/test" />
     <SUITE FILE_PATH="coverage/bestwxpy$run.coverage" NAME="run Coverage Results" MODIFIED="1563305326140" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
-    <SUITE FILE_PATH="coverage/bestwx$run.coverage" NAME="run Coverage Results" MODIFIED="1602341438221" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/bestwx$run.coverage" NAME="run Coverage Results" MODIFIED="1602941093538" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/bestwxpy$vhbox.coverage" NAME="vhbox Coverage Results" MODIFIED="1562721533791" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/test" />
     <SUITE FILE_PATH="coverage/bestwxpy$consol.coverage" NAME="consol Coverage Results" MODIFIED="1562508250496" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/test" />
     <SUITE FILE_PATH="coverage/bestwxpy$sf.coverage" NAME="sf Coverage Results" MODIFIED="1562318270295" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/test" />
@@ -537,14 +597,17 @@
     <SUITE FILE_PATH="coverage/bestwx$logr_dt.coverage" NAME="logr_dt Coverage Results" MODIFIED="1566830281306" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/../thesis/random_mvdt" />
     <SUITE FILE_PATH="coverage/bestwxpy$gridbgsz.coverage" NAME="gridbgsz Coverage Results" MODIFIED="1562758355730" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/test" />
     <SUITE FILE_PATH="coverage/bestwxpy$AUI_DockingWindowMgr.coverage" NAME="AUI_DockingWindowMgr Coverage Results" MODIFIED="1562111835129" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/test" />
+    <SUITE FILE_PATH="coverage/bestwx$panelscorll.coverage" NAME="panelscorll Coverage Results" MODIFIED="1602716206399" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/test" />
     <SUITE FILE_PATH="coverage/bestwx$run__1_.coverage" NAME="run (1) Coverage Results" MODIFIED="1566421499833" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/../thesis/random_mvdt" />
     <SUITE FILE_PATH="coverage/bestwxpy$result_panels.coverage" NAME="result_panels Coverage Results" MODIFIED="1562700739362" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/test" />
     <SUITE FILE_PATH="coverage/bestwxpy$aui.coverage" NAME="aui Coverage Results" MODIFIED="1562080770528" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/test" />
     <SUITE FILE_PATH="coverage/bestwxpy$auimanr.coverage" NAME="auimanr Coverage Results" MODIFIED="1562758218586" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/test" />
     <SUITE FILE_PATH="coverage/bestwxpy$Main.coverage" NAME="Main Coverage Results" MODIFIED="1562758415087" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/test" />
     <SUITE FILE_PATH="coverage/bestwxpy$mainapp.coverage" NAME="mainapp Coverage Results" MODIFIED="1562758433378" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/test" />
+    <SUITE FILE_PATH="coverage/bestwx$gridupdate.coverage" NAME="gridupdate Coverage Results" MODIFIED="1602671249588" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/test" />
     <SUITE FILE_PATH="coverage/bestwxpy$aa.coverage" NAME="aa Coverage Results" MODIFIED="1562080791348" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/test" />
     <SUITE FILE_PATH="coverage/bestwxpy$panels.coverage" NAME="panels Coverage Results" MODIFIED="1563235536088" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/test" />
     <SUITE FILE_PATH="coverage/bestwxpy$cal_pyw.coverage" NAME="cal.pyw Coverage Results" MODIFIED="1563137090565" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/test/xmldesing" />
+    <SUITE FILE_PATH="coverage/bestwx$pygirdtabsebase.coverage" NAME="pygirdtabsebase Coverage Results" MODIFIED="1602799552033" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/test" />
   </component>
 </project>

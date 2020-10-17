@@ -7,7 +7,7 @@ from controller.common_view import common_pandas_function
 # common_view view
 from view.common_view.common_file_dialog import open_file_dialog as ofd
 from view.common_view.common_gridview import CommonGridView
-from view.common_view.common_gridview import Test, TestFrame
+from view.common_view.common_gridview import Test
 
 
 class NewProcessPanel(wx.Panel):
@@ -105,4 +105,4 @@ class NewProcessPanel(wx.Panel):
 
         #huge
         grid = Test(self, self.nb_process)
-        self.nb_process.AddPage(grid.grid_generate(dataframe_list.head(100)), getFileName, wx.ALL | wx.EXPAND)
+        self.nb_process.AddPage(grid.grid_generate(dataframe_list), getFileName, wx.ALL | wx.EXPAND)
