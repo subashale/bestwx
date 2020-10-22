@@ -214,7 +214,7 @@ class Main_Frame(wx.Frame):
 
         # direct to open also in insight pane as tab, for now only show tab from file name
 
-        self.obj_insight.working_area(dataframe, obj_dataHistory)
+        self.obj_insight.working_area(self.mgr, self.obj_Training, dataframe, obj_dataHistory)
 
         # self.obj_Training.recent_data(obj_dataHistory)
 
@@ -270,7 +270,7 @@ class Main_Frame(wx.Frame):
         self.mgr.GetPaneByName("process_pane").Hide()
         self.mgr.GetPaneByName("insight_pane").Hide()
         self.mgr.GetPaneByName("preprocess_pane").Hide()
-        self.mgr.GetPaneByName("recent_pane").Hide()
+        self.mgr.GetPaneByName("recent_pane").Show()
         self.mgr.GetPaneByName("training_pane").Show()
         self.mgr.Update()
 

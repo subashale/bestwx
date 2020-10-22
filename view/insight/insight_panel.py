@@ -1,13 +1,15 @@
 # for result button tab
 import wx.lib.agw.aui as aui
 import wx
-
+import wx.lib.scrolledpanel
 # common_view view
 from view.common_view.common_gridview import Test, MegaGrid
 from controller.common_view.common_pandas_function import *
+from controller.helper.StatisticInfo import StatisticInfo as si
 ## use multi thread concept to handle each functionaliy for each page
 # useful when clicking data, statistics.. buttons for each opened dataset
 # task assign: ashish ;#
+from view.training.training_panel import TrainingPanel
 
 class InsightPanel(wx.Panel):
 
@@ -43,112 +45,72 @@ class InsightPanel(wx.Panel):
         welcome_panel.SetSizer(vbox)
         self.nb_result.AddPage(welcome_panel, "Recent")
 
-    def working_area(self, data_frame_list, objDataHistory):
-        # new panel to work with
-        self.newPage = PageDesign(self, self.nb_result)
-
-        self.nb_result.AddPage(self.newPage.design(data_frame_list, objDataHistory.getData()[0]), objDataHistory.getData()[1])
-
-        self.nb_result.Layout()
+    def working_area(self, mgr, objTrain, data_frame_list, objDataHistory):
+        self.newPage = PageDesign(self, self.nb_result, mgr, objTrain)
+        # self.nb_result.AddPage(self.newPage.design(data_frame_list, objDataHistory.getData()[0]), objDataHistory.getData()[1])
+        self.newPage.design(data_frame_list, objDataHistory.getData()[0], objDataHistory.getData()[1])
+        # self.nb_result.Layout()
 
 
 # Every new panel opeartion
 class PageDesign(wx.Panel):
 
-    def __init__(self, parent, panel):
+    def __init__(self, parent, nb_panel, mgr, objTrain):
         wx.Panel.__init__(self, parent=parent)
-        self.panel = panel
+        self.nb_panel = nb_panel
+        self.mgr = mgr
+        self.obj_Training = objTrain
 
-    def design(self, data_frame_list, fileLocation):
+    def design(self, data_frame_list, fileLocation, fileName):
         self.fileLocation = fileLocation
         self.data_frame_list = data_frame_list
+        self.fileName = fileName
+        self.new_page_panel = wx.Panel(self.nb_panel)
 
-        self.new_page_panel = wx.Panel(self.panel)
+        self.data_panel = wx.Panel(self.new_page_panel, wx.ID_ANY)
+        self.statistics_panel = wx.Panel(self.new_page_panel, wx.ID_ANY)
+
         self.new_page_sizer = wx.BoxSizer(wx.VERTICAL)
 
-        # top desing
-        button_16 = wx.Button(self.new_page_panel, wx.ID_ANY, "Top button 1: GO TO -->")
-        preprocessBtn = wx.Button(self.new_page_panel, wx.ID_ANY, "Preprocess")
-        trainingBtn = wx.Button(self.new_page_panel, wx.ID_ANY, "Training")
-
-        top_sizer = wx.BoxSizer(wx.HORIZONTAL)
-        top_sizer.Add(button_16, 0, 0, 0)
-        top_sizer.Add(preprocessBtn, 0, 0, 0)
-        top_sizer.Add(trainingBtn, 0, 0, 0)
-
-        self.new_page_sizer.Add(top_sizer, 0, wx.EXPAND, 0)
-        # end top desing
-
-        # left desing
         dataBtn = wx.Button(self.new_page_panel, wx.ID_ANY, "Data")
         statisticsBtn = wx.Button(self.new_page_panel, wx.ID_ANY, "Statistics")
         visualizationBtn = wx.Button(self.new_page_panel, wx.ID_ANY, "Visualization")
+
+        staticLine = wx.StaticLine(self.new_page_panel, 2, pos=(50, 0), size=(1, 25), style=wx.LI_VERTICAL)
+        preprocessBtn = wx.Button(self.new_page_panel, wx.ID_ANY, "Preprocess")
+        trainingBtn = wx.Button(self.new_page_panel, wx.ID_ANY, "Training")
+        trainingBtn.Bind(wx.EVT_BUTTON, self.showInTraining)
 
         # button click events
         dataBtn.Bind(wx.EVT_BUTTON, self.data_dispaly)
         statisticsBtn.Bind(wx.EVT_BUTTON, self.stat_dispaly)
 
-        self.bottom_sizer = wx.BoxSizer(wx.HORIZONTAL)
-        bottom_left_sizer = wx.BoxSizer(wx.VERTICAL)
+        self.bottom_sizer = wx.BoxSizer(wx.VERTICAL)
+        bottom_left_sizer = wx.BoxSizer(wx.HORIZONTAL)
 
         bottom_left_sizer.Add(dataBtn, 0, 0, 0)
         bottom_left_sizer.Add(statisticsBtn, 0, 0, 0)
         bottom_left_sizer.Add(visualizationBtn, 0, 0, 0)
 
-        self.bottom_sizer.Add(bottom_left_sizer, 0, wx.ALIGN_CENTER_VERTICAL, 10)
+        bottom_left_sizer.Add(staticLine, flag=wx.ALIGN_RIGHT | wx.RIGHT|wx.LEFT, border=15)
+        bottom_left_sizer.Add(preprocessBtn, 0, 0, 0)
+        bottom_left_sizer.Add(trainingBtn, 0, 0, 0)
 
+        self.bottom_sizer.Add(bottom_left_sizer, 0, 0)
         self.new_page_sizer.Add(self.bottom_sizer, 0, wx.EXPAND, 0)
 
         self.data_panel_design()
-
-        # self.statistics_panel_desing()
-
-        # end left desing
-
-        # # data grid and options
-        # self.data_panel = wx.Panel(self.new_page_panel, wx.ID_ANY)
-        # options = ['All', 'Missing rows', 'Not missing rows']
-        # self.grid_filter_cmb = wx.ComboBox(self.data_panel, choices=options, pos=(50, 50))
-        # self.grid_filter_cmb.SetStringSelection("All")
-        # self.grid_filter_cmb.SetEditable(False)
-        # self.grid_filter_cmb.Bind(wx.EVT_COMBOBOX, self.OnCombo)
-        # self.resultOfSelectionSt = wx.StaticText(self.data_panel, -1, "")
-        # self.data_grid = wx.grid.Grid(self.data_panel, wx.ID_ANY, size=(1, 1))
-        # show = 10
-        # self.data_grid, resultTxt = self.grid_generate(self.data_panel, data_frame_list.head(show))
-        # self.resultOfSelectionSt.SetLabel(resultTxt)
-        # self.missingMeans = wx.TextCtrl(self.data_panel)
-        # self.missingMeans.SetLabelText("',' sep without space")
-        #
-        # # put button, combo selection and text in one sizer
-        # sizer_grid_plus_btn_cmb = wx.BoxSizer(wx.HORIZONTAL)
-        # sizer_grid_plus_btn_cmb.Add(self.missingMeans, 1, wx.LEFT | wx.TOP, 10)
-        # sizer_grid_plus_btn_cmb.Add(self.grid_filter_cmb, 1, wx.LEFT | wx.TOP, 10)
-        # sizer_grid_plus_btn_cmb.Add(self.resultOfSelectionSt, 1, wx.LEFT | wx.TOP, 15)
-        #
-        # self.bottm_right_sizer = wx.BoxSizer(wx.VERTICAL)
-        # self.bottm_right_sizer.Add(sizer_grid_plus_btn_cmb, wx.ALIGN_RIGHT, wx.TOP, 10)
-        #
-        # self.grid_position = 0
-        # if len(data_frame_list.head(show)) < 20:
-        #     self.grid_position = 0
-        # else:
-        #     self.data_panel = 1
-        #
-        # self.bottm_right_sizer.Add(self.data_grid, self.grid_position, wx.ALL | wx.EXPAND | wx.LEFT | wx.TOP, 10)
-        # self.data_grid.AutoSize()
-        # self.data_panel.SetSizer(self.bottm_right_sizer)
-
-        # end working area
-
+        self.statistics_panel_desing()
+        self.statistics_panel.Hide()
         self.new_page_panel.SetSizer(self.new_page_sizer)
         self.new_page_panel.Layout()
 
-        return self.new_page_panel
+        self.nb_panel.AddPage(self.new_page_panel, self.fileName, wx.ALL | wx.EXPAND)
 
     def data_panel_design(self):
         # data grid and options
-        self.data_panel = wx.Panel(self.new_page_panel, wx.ID_ANY)
+
+        self.data_panel.SetMaxSize((-1, -1))
         options = ['All', 'Missing rows', 'Not missing rows']
         self.grid_filter_cmb = wx.ComboBox(self.data_panel, choices=options, pos=(50, 50))
         self.grid_filter_cmb.SetStringSelection("All")
@@ -171,12 +133,12 @@ class PageDesign(wx.Panel):
 
         # put button, combo selection and text in one sizer
         sizer_grid_plus_btn_cmb = wx.BoxSizer(wx.HORIZONTAL)
-        sizer_grid_plus_btn_cmb.Add(self.missingMeans, 1, wx.LEFT | wx.TOP, 10)
+        sizer_grid_plus_btn_cmb.Add(self.missingMeans, 1, wx.TOP, 10)
         sizer_grid_plus_btn_cmb.Add(self.grid_filter_cmb, 1, wx.LEFT | wx.TOP, 10)
         sizer_grid_plus_btn_cmb.Add(self.resultOfSelectionSt, 1, wx.LEFT | wx.TOP, 15)
 
         self.bottm_right_sizer = wx.BoxSizer(wx.VERTICAL)
-        self.bottm_right_sizer.Add(sizer_grid_plus_btn_cmb, wx.ALIGN_RIGHT, wx.TOP, 10)
+        self.bottm_right_sizer.Add(sizer_grid_plus_btn_cmb, wx.ALIGN_RIGHT)
 
         self.grid_position = 0
         if len(self.data_frame_list) > 20:
@@ -185,25 +147,34 @@ class PageDesign(wx.Panel):
             self.grid_position = 0
 
         self.gridOnlySz = wx.BoxSizer(wx.HORIZONTAL)
-        self.gridOnlySz.Add(self.data_grid, self.grid_position, wx.ALL | wx.EXPAND | wx.LEFT | wx.TOP, 10)
 
-        self.bottm_right_sizer.Add(self.gridOnlySz, self.grid_position, wx.ALL | wx.EXPAND | wx.LEFT | wx.TOP, 10)
+        self.gridOnlySz.Add(self.data_grid, self.grid_position, wx.EXPAND, 0)
+
+        self.bottm_right_sizer.Add(self.gridOnlySz, self.grid_position, wx.EXPAND, 0)
 
         self.data_panel.SetSizer(self.bottm_right_sizer)
 
-        self.bottom_sizer.Add(self.data_panel, 0, wx.ALL | wx.EXPAND | wx.LEFT | wx.TOP, 10)
+        self.bottom_sizer.Add(self.data_panel, 1, wx.ALL | wx.EXPAND, 0)
+
+        self.nb_panel.Layout()
 
     def statistics_panel_desing(self):
-        self.statistics_panel = wx.Panel(self.new_page_panel, wx.ID_ANY)
 
-        self.welcome = wx.StaticText(self.statistics_panel, -1, "asdfadf")
-        # put button, combo selection and text in one sizer
-        sizer_grid_plus_btn_cmb = wx.BoxSizer(wx.HORIZONTAL)
-        sizer_grid_plus_btn_cmb.Add(self.welcome, 1, wx.LEFT | wx.TOP, 15)
+        self.statistics_panel.Show()
 
-        self.statistics_panel.SetSizer(sizer_grid_plus_btn_cmb)
+        # check desktop/stat.jpg
+        # each attribute becomes panel and check phonix to for minize option
+        #     python run.py PyCollapsiblePane
+        #     python CollapisblePane
+        #
+        # 1. write class to get information regarding each attributes
 
-        self.bottom_sizer.Add(self.statistics_panel, 0, wx.ALL | wx.EXPAND | wx.LEFT | wx.TOP, 10)
+
+        statpanel = StatisticPanel(self, self.statistics_panel, self.data_frame_list)
+        statpanel.design()
+        self.bottom_sizer.Add(self.statistics_panel, 0, wx.ALL | wx.EXPAND, 0)
+
+        self.nb_panel.Layout()
 
     def OnCombo(self, event):
         if self.data_grid:
@@ -251,11 +222,21 @@ class PageDesign(wx.Panel):
         self.resultOfSelectionSt.SetLabel(resultTxt)
         print("pos", self.grid_position)
         self.gridOnlySz = wx.BoxSizer(wx.HORIZONTAL)
-        self.gridOnlySz.Add(self.data_grid, self.grid_position, wx.ALL | wx.EXPAND | wx.LEFT | wx.TOP, 10)
-        self.bottm_right_sizer.Add(self.gridOnlySz, self.grid_position, wx.ALL | wx.EXPAND | wx.LEFT | wx.TOP, 10)
-
+        self.gridOnlySz.Add(self.data_grid, self.grid_position, wx.EXPAND, 0)
+        self.bottm_right_sizer.Add(self.gridOnlySz, self.grid_position, wx.EXPAND, 0)
         self.new_page_panel.Layout()
         return self.new_page_panel
+
+    def showInTraining(self, event):
+        self.mgr.GetPaneByName("process_pane").Hide()
+        self.mgr.GetPaneByName("insight_pane").Hide()
+        self.mgr.GetPaneByName("preprocess_pane").Hide()
+        self.mgr.GetPaneByName("recent_pane").Show()
+        self.mgr.GetPaneByName("training_pane").Show()
+
+        self.obj_Training.trainingDesing(self.data_frame_list, self.fileName)
+
+        self.mgr.Update()
 
     def data_dispaly(self, event):
         # targeting each widgets by
@@ -263,27 +244,20 @@ class PageDesign(wx.Panel):
         if self.statistics_panel:
             self.statistics_panel.Hide()
 
-        self.data_panel_design()
+        # self.data_panel_design()
         self.data_panel.Show()
 
         self.new_page_panel.Layout()
-        # while creating individual panels
-        # if self.grid_options.Show() == False:
-        #     self.grid_options.Show()
 
     def stat_dispaly(self, event):
         # self.grid_options.Hide()
         if self.data_panel:
             self.data_panel.Hide()
 
-
-        self.statistics_panel_desing()
+        # self.statistics_panel_desing()
         self.statistics_panel.Show()
+        self.statistics_panel.Layout()
         self.new_page_panel.Layout()
-        # self.statistics_panel.Show()
-        # self.grid_1.Destroy() # deletes the widiges
-        # self.data_grid.Hide()
-
 
 class showData(wx.Panel):
 
@@ -342,3 +316,137 @@ class showData(wx.Panel):
         self.panel.Layout()
         return self.panel
 
+class StatisticPanel(wx.Panel):
+
+    def __init__(self, parent, panel, df):
+        wx.Panel.__init__(self, parent=parent)
+        self.panel = panel
+        self.df = df
+
+    def design(self):
+        # calling for statistic information
+        self.si = si(self.df)
+        mainhbox = wx.BoxSizer(wx.VERTICAL)
+        screenSize = wx.DisplaySize()
+        self.mainStatPnl = wx.lib.scrolledpanel.ScrolledPanel(self.panel, 1, size=(wx.EXPAND, screenSize[1]),
+                                                              style=wx.SIMPLE_BORDER)
+
+        self.mainStatPnl.SetupScrolling()
+        self.mainStatPnl.SetBackgroundColour('#FFFFFF')
+
+        # self.mainStatPnl.SetMinSize((wx.ALL, screenSize[0]))
+
+        attributes = self.df.keys()
+        main = wx.GridBagSizer(0, 0) # wx.BoxSizer(wx.VERTICAL)
+
+        headerPnl = wx.Panel(self.panel, wx.ID_ANY)
+        headerPnl.SetMaxSize((wx.EXPAND, 20))
+
+        hbox = wx.GridBagSizer(0,0)
+        attributeName = wx.StaticText(headerPnl, 0, "Name")
+        attributeName.SetFont(wx.Font(11, wx.FONTFAMILY_SWISS, wx.FONTSTYLE_NORMAL, wx.FONTWEIGHT_NORMAL))
+        attributeType = wx.StaticText(headerPnl, 0, "Type")
+        attributeType.SetFont(wx.Font(11, wx.FONTFAMILY_SWISS, wx.FONTSTYLE_NORMAL, wx.FONTWEIGHT_NORMAL))
+        attributeMissing = wx.StaticText(headerPnl, 0, "Missing")
+        attributeMissing.SetFont(wx.Font(11, wx.FONTFAMILY_SWISS, wx.FONTSTYLE_NORMAL, wx.FONTWEIGHT_NORMAL))
+        attributeStat = wx.StaticText(headerPnl, 0, "Statistics")
+        attributeStat.SetFont(wx.Font(11, wx.FONTFAMILY_SWISS, wx.FONTSTYLE_NORMAL, wx.FONTWEIGHT_NORMAL))
+
+        hbox.Add(attributeName, pos=(0, 0), span=(0, 27), flag=wx.LEFT, border=15)
+        hbox.Add(attributeType, pos=(0, 28), flag=wx.LEFT, border=15)
+        hbox.Add(attributeMissing, pos=(0, 33), flag=wx.LEFT, border=15)
+        hbox.Add(attributeStat, pos=(0, 36), flag=wx.LEFT, border=15)
+
+        headerPnl.SetSizer(hbox)
+
+        mainhbox.Add(headerPnl, 0,0,0)
+        # main.Add(headerPnl, pos=(0, 0), flag=wx.EXPAND, border=-1) #main.Add(headerPnl, 0, wx.EXPAND, wx.BOTTOM | wx.TOP, 15)
+
+        color = "#e8e9eb"
+        maxNameChar = 25
+        for i, att in enumerate(attributes):
+            attName = att
+            remove = 0
+            if len(attName) > maxNameChar:
+                remove = len(attName) - maxNameChar
+                attName = attName[:-remove] + "..."
+
+            att = wx.Panel(self.mainStatPnl, wx.ID_ANY, size=(wx.EXPAND, 120))
+            att.SetMaxSize((wx.EXPAND, 150))
+            att.SetBackgroundColour(color)
+
+            name = wx.StaticText(att, wx.ID_ANY, attName)
+            name.SetFont(wx.Font(12, wx.FONTFAMILY_SWISS, wx.FONTSTYLE_NORMAL, wx.FONTWEIGHT_BOLD))
+            name.SetForegroundColour("black")
+
+            dataType = wx.StaticText(att, wx.ID_ANY, str(self.si.showType(attributes[i])), size=((65, 20)))
+            missing = wx.StaticText(att, wx.ID_ANY, str(self.si.getMissing(attributes[i])), size=((65, 20)))
+
+            statData = self.si.getStatistics(attributes[i])
+            lMMMAVLabel = list(statData.keys())
+            lMMMAVValue = list(statData.values())
+
+            leastOrMin = wx.StaticText(att, wx.ID_ANY, lMMMAVLabel[0], size=((50, 20)))
+            leastOrMinVal = wx.StaticText(att, wx.ID_ANY, str(lMMMAVValue[0]), size=((150, 120)))
+
+            fixSizer1 = wx.BoxSizer(wx.HORIZONTAL)
+            fixSizer1.Add(leastOrMinVal, 0, wx.EXPAND, 0)
+
+            mostOrMax = wx.StaticText(att, wx.ID_ANY, lMMMAVLabel[1], size=((50, 20)))
+            mostOrMaxVal = wx.StaticText(att, wx.ID_ANY, str(lMMMAVValue[1]), size=((150, 120)))
+
+            fixSizer2 = wx.BoxSizer(wx.HORIZONTAL)
+            fixSizer2.Add(mostOrMaxVal, 0, wx.EXPAND, 0)
+
+            avgOrValues = wx.StaticText(att, wx.ID_ANY, lMMMAVLabel[2], size=((50, 20)))
+            if isinstance(lMMMAVValue[2],float) or isinstance(lMMMAVValue[2], int):
+                avgOrValuesVal = wx.StaticText(att, wx.ID_ANY, str(lMMMAVValue[2]), size=((-1, 12)))
+                print(attributes[i], lMMMAVValue[0])
+            elif isinstance(lMMMAVValue[2], dict):
+                print(lMMMAVValue[2])
+                label = ""
+                for key, count in lMMMAVValue[2].items():
+
+                    if list(lMMMAVValue[2].keys())[-1] == key:
+                        label = label+str(key)+"("+str(count)+")"
+                    else:
+                        label = label + str(key) + "(" + str(count) + ")\n, "
+                avgOrValuesVal = wx.TextCtrl(att, wx.ID_ANY, value=label, pos=wx.DefaultPosition,
+                                  size=(-1, 120),
+                                  style=wx.TE_MULTILINE | wx.SUNKEN_BORDER)
+                avgOrValuesVal.SetEditable(False)
+            else:
+                print(lMMMAVValue[2], type(lMMMAVValue[2]))
+                avgOrValuesVal = wx.StaticText(att, wx.ID_ANY, str(lMMMAVValue[2]), size=((200, 100)))
+
+            fixSizer3 = wx.BoxSizer(wx.HORIZONTAL)
+            fixSizer3.Add(avgOrValuesVal, 0, wx.EXPAND, 0)
+
+            sizer = wx.GridBagSizer(0,0)
+
+            sizer.Add(name, pos=(0, 0), span=(0, 27), flag=wx.LEFT|wx.TOP, border=15)
+            sizer.Add(dataType, pos=(0, 28), flag=wx.LEFT|wx.TOP, border=15)
+            sizer.Add(missing, pos=(0, 31), flag=wx.ALIGN_LEFT|wx.LEFT|wx.TOP, border=15)
+
+            sizer.Add(leastOrMin, pos=(0, 33), flag=wx.ALIGN_RIGHT|wx.LEFT|wx.TOP, border=15)
+            sizer.Add(fixSizer1, pos=(0, 34), flag=wx.ALIGN_RIGHT | wx.LEFT | wx.TOP, border=15)
+            sizer.Add(mostOrMax, pos=(0, 35), flag=wx.ALIGN_RIGHT | wx.LEFT | wx.TOP, border=15)
+            sizer.Add(fixSizer2, pos=(0, 36), flag=wx.ALIGN_RIGHT | wx.LEFT | wx.TOP, border=15)
+            sizer.Add(avgOrValues, pos=(0, 37), flag=wx.ALIGN_RIGHT | wx.LEFT | wx.TOP, border=15)
+            sizer.Add(fixSizer3, pos=(0, 38), flag=wx.ALIGN_RIGHT | wx.LEFT | wx.TOP, border=15)
+
+            att.SetSizer(sizer)
+
+            main.Add(att, pos=(i+1, 0), flag=wx.EXPAND| wx.TOP, border=3)
+
+            # if len(attributes) == i+1:
+            #     continue
+            # stl = wx.StaticLine(self.mainStatPnl, -1)
+            # main.Add(stl, pos=(i+2,0), flag=wx.ALL, border=5)
+            #main.Add(wx.StaticLine(self.mainStatPnl, -1), 0, wx.EXPAND | wx.TOP | wx.BOTTOM, 5)
+
+        self.mainStatPnl.SetSizer(main)
+        # self.mainStatPnl.Layout()
+        mainhbox.Add(self.mainStatPnl)
+        self.panel.SetSizer(mainhbox)
+        self.panel.Layout()

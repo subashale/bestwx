@@ -23,12 +23,12 @@ class TrainingPanel(wx.Panel):
         # storing info pane to give information on each step
         width, height = wx.GetDisplaySize()
 
-
         self.panel_design()
 
     def panel_design(self):
         # create notebook
         self.nb_training = aui.AuiNotebook(self)
+        self.Bind(aui.EVT_AUINOTEBOOK_PAGE_CLOSED, self.close, self.nb_training)
 
         #self.default_tab()
         self.main_area()
@@ -41,6 +41,15 @@ class TrainingPanel(wx.Panel):
         self.Center()
         self.Show()
 
+    def close(self, evt):
+        print("close clicked")
+
+        if self.nb_training.GetPageCount() == 0:
+            self.main_area()
+            self.panel.Layout()
+            self.nb_training.Update()
+            self.nb_training.Layout()
+
     # wokring area for each step of model training
     def main_area(self):
 
@@ -52,7 +61,7 @@ class TrainingPanel(wx.Panel):
         self.navigation_panel.SetMaxSize((wx.EXPAND, 40))
         self.navigation_panel.SetBackgroundColour("#518962")
 
-        self.navigation_area()
+        self.navigation_area(self.navigation_panel)
         self.obj_showData = showData(self, self.display_panel)
         self.obj_showData.design()
 
@@ -62,8 +71,8 @@ class TrainingPanel(wx.Panel):
         self.panel.SetSizer(self.basicsizer)
 
 
-        #main.SetSizer(vsz_top)
-        self.nb_training.AddPage(self.panel, "Train Model")
+        # #main.SetSizer(vsz_top)
+        self.nb_training.AddPage(self.panel, "Train Model", wx.ALL | wx.EXPAND)
 
     # after opening data from file dialog, describe it with its basic properties else directly go to next step
     # basic properties would be like dataset full name of dataset;
@@ -73,17 +82,17 @@ class TrainingPanel(wx.Panel):
     ### Select task would be classification, regression and clustering;
     # #
     # button buttons for calling each steps
-    def navigation_area(self):
+    def navigation_area(self, navigation_panel):
 
         # design for bottom panel
         vbz = wx.BoxSizer(wx.VERTICAL)
         hbz = wx.BoxSizer(wx.HORIZONTAL)
-        self.btn_load_data = wx.Button(self.navigation_panel, 1, 'Load Data')
-        self.btn_select_task = wx.Button(self.navigation_panel, 2, 'Select Task')
+        self.btn_load_data = wx.Button(navigation_panel, 1, 'Load Data')
+        self.btn_select_task = wx.Button(navigation_panel, 2, 'Select Task')
         # self.btn_prepare_target = wx.Button(self.navigation_panel, 3, 'Prepare Target')
         # self.btn_select_input = wx.Button(self.navigation_panel, 3, 'Select Input')
         # self.btn_model_type = wx.Button(self.navigation_panel, 3, 'Model Type')
-        self.btn_result = wx.Button(self.navigation_panel, 3, 'Training')
+        self.btn_result = wx.Button(navigation_panel, 3, 'Training')
 
         # buttons click events
         self.btn_load_data.Bind(wx.EVT_BUTTON, self.onClickedLoadData)
@@ -109,32 +118,49 @@ class TrainingPanel(wx.Panel):
         hbz.Add(self.btn_result, 1, wx.ALIGN_CENTER | wx.ALL, 5)
 
         vbz.Add(hbz, 1, wx.ALIGN_CENTER)
-        self.navigation_panel.SetSizer(vbz)
+        navigation_panel.SetSizer(vbz)
 
     # action for loading data to train a model
     def onClickedLoadData(self, event):
-        self.obj_LoadData = LoadData(self)
-        self.getFileLocation, self.getFileName = self.obj_LoadData.open_load_data()
+        obj_LoadData = LoadData(self)
+        self.getFileLocation, self.getFileName = obj_LoadData.open_load_data()
 
         if self.getFileLocation and self.getFileName != "":
             # enable next button, btn select task
             # self.obj_LoadData.display_data_properties()
             self.btn_select_task.Enable(True)
 
+
         df = pd.read_csv(self.getFileLocation)
+        self.trainingDesing(df, self.getFileName)
 
-        # vbox = wx.BoxSizer(wx.VERTICAL)
-        # gridData = self.grid_generate(self.display_panel, df.head(100))
-        # vbox.Add(gridData, 0, wx.ALL | wx.EXPAND | wx.LEFT | wx.TOP, 10)
-        # gridData.AutoSize()
-        # self.display_panel.SetSizer(vbox)
-
-        # newPage = showData(self, self.display_panel)
+    def trainingDesing(self, df, name):
+        self.btn_result.Enable(False)
         self.obj_showData.grid_design_huge(df)
+        self.nb_training.SetPageText(page_idx=self.nb_training.GetSelection(), text=name)
 
-        self.display_panel.Layout()
-        self.nb_training.Layout()
-        self.Layout()
+    # for multiple trainig process
+    def getFrom(self, df, name):
+        panel = wx.Panel(self.nb_training, -1)
+        display_panel = wx.Panel(panel)
+        #self.display_panel.SetMaxSize((wx.EXPAND, 600))
+        display_panel.SetBackgroundColour("#707772")
+        navigation_panel = wx.Panel(panel)
+        navigation_panel.SetMaxSize((wx.EXPAND, 40))
+        navigation_panel.SetBackgroundColour("#518962")
+
+        self.navigation_area(navigation_panel)
+        self.btn_select_task.Enable(True)
+        obj_showData = showData(self, display_panel)
+        obj_showData.design()
+        obj_showData.grid_design_huge(df)
+
+
+        basicsizer = wx.BoxSizer(wx.VERTICAL)
+        basicsizer.Add(navigation_panel, 1, wx.EXPAND)
+        basicsizer.Add(display_panel, 1, wx.EXPAND)
+        panel.SetSizer(basicsizer)
+        self.nb_training.AddPage(panel, name, wx.ALL | wx.EXPAND)
 
     # action for selecting task
     def onClickedSelectTask(self, event):
@@ -145,56 +171,6 @@ class TrainingPanel(wx.Panel):
         else:
             self.btn_result.Enable(False)
 
-
-    #
-    #     self.display_panel.Hide()
-    #     self.select_task_panel = wx.Panel(self.nb_training)
-    #
-    # #if selection is prediction then choose label as well
-    # # if other skip prepare target;#
-    #     print("select task clicked")
-    #     self.task = {}
-    #     selected_task = "prediction"
-    #
-    #     # condition for task selection
-    #     if selected_task == "prediction":
-    #         # put prediction name and label for it, default label can be last column name
-    #         self.task["task"] = "prediction"
-    #         self.task["label"] = "Species"
-    #         # active next button prepare target
-    #         self.btn_prepare_target.Enable(True)
-    #     else:
-    #         # we can skip prepare target for other
-    #         self.btn_select_input.Enable(True)
-
-    # action for prepare target class/label
-    # def onClickedPrepareTarget(self, event):
-    # # show label distribution and option to change label name;#
-    #     ok = "ok"
-    #     if ok == "ok":
-    #         self.btn_select_input.Enable(True)
-
-    # action for select input as feature
-    # def onClickedSelectInput(self, event):
-    # # select feature for training, default can be all but users can change
-    # # text cannot directly process there we need to handle that in this part, long text, categorical text, names, other
-    # # for now on iris data we select all [:-1];#
-    #     select_input = "all"
-    #
-    #     self.task["select_input"] = select_input
-    #     if select_input != "":
-    #         self.btn_model_type.Enable(True)
-
-    #action for select types of model to train on
-    # def onClickedModelType(self, event):
-    # #give list of algorithm for particular task;#
-    #     model = ["DecisionTreeClassifier", "LogisticRegression"]
-    #
-    #     # check if model length not empty
-    #     if len(model) != 0:
-    #         self.task["model"] = model
-    #         self.btn_result.Enable(True)
-    # action for result button
     def onClickTraining(self, event):
         # we are sending task object and file location but later we can separate each
 
@@ -254,19 +230,12 @@ class showData(wx.Panel):
         self.grid_1 = wx.grid.Grid(self.dataGridPanl, wx.ID_ANY)
         self.InfoPnl = wx.Panel(self.panel, wx.ID_ANY)
 
-        # self.combo_box_1 = wx.ComboBox(self.InfoPnl, wx.ID_ANY, choices=[], style=wx.CB_DROPDOWN)
-        # self.dataGridPanl.SetSize((250, -1))
         self.dataGridPanl.SetMaxSize((750,-1))
-        # self.panel.Hide()
-        # self.__set_properties()
-        # self.design()
-        #
-        # self.dataGridPanl.Layout()
-        # end wxGlade
 
     def __set_properties(self):
         # begin wxGlade: MyFrame.__set_properties
         self.grid_1.CreateGrid(10, 9)
+
         # end wxGlade
 
     def design(self):
@@ -288,21 +257,6 @@ class showData(wx.Panel):
         return self.panel
         # end wxGlade
 
-    # def infoPanlTaskAlgoDesing(self):
-    #     self.taskAlgo = wx.BoxSizer(wx.HORIZONTAL)
-    #     taskSt = wx.StaticText(self.InfoPnl, wx.ID_ANY, "Task")
-    #     self.taskList = ["Classification", "Regression"]
-    #     taskCombo = wx.ComboBox(self.InfoPnl, wx.ID_ANY, choices=self.taskList, style=wx.CB_DROPDOWN)
-    #
-    #     algoSt = wx.StaticText(self.InfoPnl, 0, "Select Algorithm(s)")
-    #     self.listAlgo = ["Decision Tree", "Logistic Regression", "SVM"]
-    #     self.taskAlgo.Add(taskSt)
-    #     self.taskAlgo.Add(taskCombo)
-    #     self.taskAlgo.Add(algoSt)
-    #     for i in self.listAlgo:
-    #         self.taskAlgo.Add(wx.CheckBox(self.InfoPnl, wx.ID_ANY, i))
-    #     self.InfoPnlMainsz.Add(self.taskAlgo, 1)
-    #     self.InfoPnl.SetSizer(self.InfoPnlMainsz)
 
     def inputOutputDesing(self, df):
         self.InfoPnlMainsz = wx.BoxSizer(wx.VERTICAL)
@@ -463,7 +417,6 @@ class showData(wx.Panel):
         self.InfoPnl = wx.Panel(self.panel, wx.ID_ANY)
         self.main_sz.Add(self.InfoPnl, 1, wx.EXPAND, 0)
 
-
         # huge data grid with additional properties
         data, columns = self.girdData(dataFrame)
         self.grid_1 = MegaGrid(self.dataGridPanl, data, columns)
@@ -479,9 +432,3 @@ class showData(wx.Panel):
         # self.grid_1.AutoSize()
         self.panel.Layout()
         return self.panel
-
-
-
-
-
-

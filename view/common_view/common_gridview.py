@@ -4,12 +4,11 @@ import random
 
 
 # auto grid makes loading data extremly slow find other ways to use autosize functionality
-def grid_generate(self, new_demo, data_frame):
-    import wx.grid as gridlib
+def grid_generate(new_demo, data_frame):
 
     column = tuple(data_frame.columns.values)
     data = data_frame.to_records(index=False)
-    grid = gridlib.Grid(new_demo)
+    grid = Grid.Grid(new_demo)
 
     grid.CreateGrid(len(data), len(column))
 
@@ -24,7 +23,6 @@ def grid_generate(self, new_demo, data_frame):
 
 class CommonGridView(wx.Panel):
     """"""
-
     def __init__(self, parent, notebook):
         """Constructor"""
         wx.Panel.__init__(self, parent=parent)
@@ -84,6 +82,7 @@ class GridData(wx.grid.GridTableBase):
     def set_value(self, row, col, val):
         self._highlighted.add(row)
         self.SetValue(row, col, val)
+
 # for huge data invoking
 class Test(wx.Panel):
 
@@ -94,10 +93,6 @@ class Test(wx.Panel):
 
 
     def grid_generate(self, dataframe):
-        # dataframe = pd.concat([dataframe, dataframe, dataframe, dataframe, dataframe, dataframe, dataframe, dataframe])
-        # dataframe = pd.concat([dataframe, dataframe])
-        # dataframe = pd.concat([dataframe, dataframe, dataframe, dataframe, dataframe])
-
         cols = dataframe.columns.values.tolist()
         data = dataframe.values.tolist()
 
